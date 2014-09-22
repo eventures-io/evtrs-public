@@ -1,41 +1,22 @@
 <!DOCTYPE html>
 <html ng-app="eventApp">
 <head>
-
-	<!-- CSS -->
 	<link rel="stylesheet" href="styles/eventures.css">
-
 </head>
-
-
 <body>
+	<div ui-view class="page page-view"></div>
 
-	<div ui-view ng-class="slide"></div>
 
-    <!--<script type="text/ng-template" id="/nav.part.html">-->
-        <!--<div ui-view="nav-view">-->
-      <!--<h1>Navigation</h1>-->
-        <!--</div>-->
-    <!--</script>-->
-
-    <!--<script type="text/ng-template" id="/content.part.html">-->
-
-      <!--<div ui-view="content-view">-->
-
-        <!--<section ui-view="about-view"  id="about" class="about-section">-->
-
-        <!--</section>-->
-
-        <!--<section ui-view="services-view"  id="services" class="services-section">-->
-
-        <!--</section>-->
-
-        <!--<section ui-view="contact-view"  id="contact" class="contact-section">-->
-
-        <!--</section>-->
-      <!--</div>-->
-
-    <!--</script>-->
+    <script type="text/ng-template" id="/base.part.html">
+        <nav>
+            <H1>NAV HERE</H1>  <div>
+            <a class="btn btn-default" ui-sref="intro">Home</a>
+        </div>
+        </nav>
+        <div class="content-container">
+            <div ui-view="content-view" class="page content-view"></div>
+        </div>
+    </script>
 
 		
 </body>

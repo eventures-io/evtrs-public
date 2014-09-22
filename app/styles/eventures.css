@@ -3594,30 +3594,36 @@ tbody.collapse.in {
   .hidden-print {
     display: none !important; } }
 html {
-  overflow-y: hidden; }
+  overflow-y: hidden;
+  height: 100%; }
 
-.page-container {
-  position: relative; }
+body {
+  height: 100%; }
+
+.content-container {
+  position: relative;
+  height: 100%; }
 
 .page {
   bottom: 0;
   top: 0;
   left: 0;
   position: absolute;
-  width: 100%; }
+  width: 100%;
+  height: 100%; }
 
 .page-intro {
   background-color: #ffff00;
-  height: 100%; }
+  height: 100%;
+  border-bottom: 1px; }
 
 .page-services {
   background: lightgray;
-  border: solid;
-  height: 600px; }
+  height: 100%; }
 
 .page-about {
   background: gray;
-  height: 600px; }
+  height: 100%; }
 
 /* ANIMATIONS -------------------*/
 .page.ng-leave {
@@ -3627,8 +3633,8 @@ html {
   z-index: 8888; }
 
 /* page specific animations ------------------------ */
-/* services -------------------------- */
-.page-services.ng-leave {
+/* content view -------------------------- */
+.content-view.ng-leave {
   -webkit-transform-origin: 0% 0%;
   -webkit-animation: rotateFall 1s both ease-in;
   -moz-transform-origin: 0% 0%;
@@ -3636,35 +3642,16 @@ html {
   transform-origin: 0% 0%;
   animation: rotateFall 1s both ease-in; }
 
-.page-services.ng-enter {
+.content-view.ng-enter {
   -webkit-animation: scaleUp 0.5s both ease-in;
   -moz-animation: scaleUp 0.5s both ease-in;
   animation: scaleUp 0.5s both ease-in; }
 
-/* about ------------------------ */
-.page-about.ng-leave {
-  -webkit-animation: slideOutLeft 0.5s both ease-in;
-  -moz-animation: slideOutLeft 0.5s both ease-in;
-  animation: slideOutLeft 0.5s both ease-in; }
-
-.page-about.ng-enter {
-  -webkit-animation: slideInRight 0.5s both ease-in;
-  -moz-animation: slideInRight 0.5s both ease-in;
-  animation: slideInRight 0.5s both ease-in; }
-
-/* contact ---------------------- */
-.page-contact.ng-leave {
-  -webkit-transform-origin: 50% 50%;
-  -webkit-animation: rotateOutNewspaper .5s both ease-in;
-  -moz-transform-origin: 50% 50%;
-  -moz-animation: rotateOutNewspaper .5s both ease-in;
-  transform-origin: 50% 50%;
-  animation: rotateOutNewspaper .5s both ease-in; }
-
-.page-contact.ng-enter {
-  -webkit-animation: slideInUp 0.5s both ease-in;
-  -moz-animation: slideInUp 0.5s both ease-in;
-  animation: slideInUp 0.5s both ease-in; }
+/* page view ------------------------ */
+.page-view.ng-leave {
+  -webkit-animation: slideOutUp 0.9s both ease-out;
+  -moz-animation: slideOutUp 0.9s both ease-out;
+  animation: slideOutUp 0.9s both ease-out; }
 
 /* rotate and fall */
 @-webkit-keyframes rotateFall {
@@ -3707,69 +3694,24 @@ html {
 @keyframes scaleUp {
   from {
     opacity: 0.3;
-    transform: scale(0.8); } }
+    transform: scale(0.9); } }
 @-moz-keyframes scaleUp {
   from {
     opacity: 0.3;
-    -moz-transform: scale(0.8); } }
+    -moz-transform: scale(0.9); } }
 @-webkit-keyframes scaleUp {
   from {
     opacity: 0.3;
-    -webkit-transform: scale(0.8); } }
-/* slide in from the right */
-@keyframes slideInRight {
-  from {
-    transform: translateX(100%); }
+    -webkit-transform: scale(0.9); } }
+/* slide out to top */
+@keyframes slideOutUp {
   to {
-    transform: translateX(0); } }
-@-moz-keyframes slideInRight {
-  from {
-    -moz-transform: translateX(100%); }
+    transform: translateY(-100%); } }
+@-moz-keyframes slideOutUp {
   to {
-    -moz-transform: translateX(0); } }
-@-webkit-keyframes slideInRight {
-  from {
-    -webkit-transform: translateX(100%); }
+    -moz-transform: translateY(-100%); } }
+@-webkit-keyframes slideOutUp {
   to {
-    -webkit-transform: translateX(0); } }
-/* slide in from the bottom */
-@keyframes slideInUp {
-  from {
-    transform: translateY(100%); }
-  to {
-    transform: translateY(0); } }
-@-moz-keyframes slideInUp {
-  from {
-    -moz-transform: translateY(100%); }
-  to {
-    -moz-transform: translateY(0); } }
-@-webkit-keyframes slideInUp {
-  from {
-    -webkit-transform: translateY(100%); }
-  to {
-    -webkit-transform: translateY(0); } }
-/* slide in from the bottom */
-@keyframes slideOutLeft {
-  to {
-    transform: translateX(-100%); } }
-@-moz-keyframes slideOutLeft {
-  to {
-    -moz-transform: translateX(-100%); } }
-@-webkit-keyframes slideOutLeft {
-  to {
-    -webkit-transform: translateX(-100%); } }
-/* rotate out newspaper */
-@-webkit-keyframes rotateOutNewspaper {
-  to {
-    -webkit-transform: translateZ(-3000px) rotateZ(360deg);
-    opacity: 0; } }
-@-moz-keyframes rotateOutNewspaper {
-  to {
-    -moz-transform: translateZ(-3000px) rotateZ(360deg);
-    opacity: 0; } }
-@keyframes rotateOutNewspaper {
-  to {
-    transform: translateZ(-3000px) rotateZ(360deg);
-    opacity: 0; } }
+    -webkit-transform: translateY(-100%); } }
 
 /*# sourceMappingURL=eventures.css.map */

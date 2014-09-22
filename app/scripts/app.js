@@ -45,7 +45,7 @@ eventApp.config(function ($locationProvider, $stateProvider, $urlRouterProvider)
         .state('base', {
             abstract: true,
             url: "/",
-            templateUrl: 'views/partials/base.part.html'
+            templateUrl: '/base.part.html'
         })
         .state('base.services', {
             url: "services",
