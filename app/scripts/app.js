@@ -40,7 +40,7 @@ eventApp.config(function ($locationProvider, $stateProvider, $urlRouterProvider)
     $stateProvider
         .state('intro', {
             url: '/',
-            templateUrl: 'views/partials/intro.part.html'
+            templateUrl: '/intro.part.html'
         })
         .state('base', {
             abstract: true,
@@ -50,7 +50,7 @@ eventApp.config(function ($locationProvider, $stateProvider, $urlRouterProvider)
         .state('base.services', {
             url: "services",
             views: {
-                'content-view@base': { templateUrl: 'views/partials/services.part.html',
+                'content-view@base': { templateUrl: '/services.part.html',
                     controller: 'ServicesController'
                 }
             }
@@ -58,11 +58,10 @@ eventApp.config(function ($locationProvider, $stateProvider, $urlRouterProvider)
         .state('base.about', {
             url: "about",
             views: {
-                'content-view@base': { templateUrl: 'views/partials/about.part.html'
+                'content-view@base': { templateUrl: '/about.part.html'
                 }
             }
         })
-
 })
 ;
 
