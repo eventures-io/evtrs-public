@@ -40,7 +40,8 @@ eventApp.config(function ($locationProvider, $stateProvider, $urlRouterProvider)
     $stateProvider
         .state('intro', {
             url: '/',
-            templateUrl: '/intro.part.html'
+            templateUrl: '/intro.part.html',
+            controller: 'IntroController'
         })
         .state('base', {
             abstract: true,
@@ -65,7 +66,6 @@ eventApp.config(function ($locationProvider, $stateProvider, $urlRouterProvider)
 })
 ;
 
-
 eventApp.controller ("ServicesController", function ($scope) {
     $scope.$on('$viewContentLoaded',
         function (event) {
@@ -73,6 +73,23 @@ eventApp.controller ("ServicesController", function ($scope) {
 
         });
 })
+
+
+eventApp.controller ("IntroController", function ($scope, $timeout) {
+    $scope.hidden = true;
+    $scope.$on('$viewContentLoaded',
+        function (event) {
+            $timeout( function() {unsetHidden($scope) }, 200 );
+        });
+
+    var unsetHidden = function($scope) {
+        $scope.hidden = false;
+    }
+})
+
+
+
+
 
 
 

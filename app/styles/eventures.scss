@@ -25,7 +25,8 @@ body {
 }
 
 .page-intro {
-   background-color: #ffff00;
+   background: url("../images/bg-everest.jpg");
+   background-size: cover;
    height: 100%;
    border-bottom: 1px;
 }
@@ -40,9 +41,32 @@ body {
   height: 100%;
 }
 
+H1.home {
+color:white;
+font-size: 60px;
+text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.intro-title {
+  top: 60%;
+  left: calc(50% - 300px);
+}
+
+.intro-text {
+  Top: 70%;
+  left: calc(50% - 1px);
+}
+
+.abs-center {
+  position: absolute;
+  margin-left:auto;
+  margin-right:auto;
+}
+
 /* ANIMATIONS -------------------*/
 
 .page.ng-leave {
+
   z-index: 9999;
 }
 
@@ -75,7 +99,30 @@ body {
   animation: slideOutUp 0.9s both ease-out;
 }
 
+/* Title slide in --------------- */
+.intro-title.ng-hide-add,
+.intro-title.ng-hide-remove {
+  -moz-transition:all 2s;
+  -webkit-transition:all 2s;
+  -o-transition:all 2s;
+  transition:all 2s;
+}
 
+.intro-title.ng-hide {
+  top:0;
+}
+
+.intro-text.ng-hide-add,
+.intro-text.ng-hide-remove {
+  -webkit-transition: 3s linear all;
+  transition: 3s linear all;
+  display:block!important;
+  opacity:1;
+}
+
+.intro-text.ng-hide {
+  opacity:0;
+}
 /* rotate and fall */
 @-webkit-keyframes rotateFall {
   0% {
@@ -177,4 +224,9 @@ body {
     -webkit-transform: translateY(-100%);
   }
 }
+
+
+
+
+
 
