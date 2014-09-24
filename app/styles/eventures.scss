@@ -45,28 +45,42 @@ body {
 /* INTRO PAGE -----------------*/
 
 H1.home {
+  font-family: 'Coda Caption', sans-serif;
   font-size: 60px;
-
 }
 
 .intro-title {
   top: 55%;
   left: calc(50% - 300px);
-  background: rgba(104,104,104,0.3);
+  background: rgba(104,104,104,0.5);
   border-radius: 5px;
   color:white;
   padding: 0px 25px 25px 25px;
   margin-left: 30px;
+  font-size: large;
+}
+
+.intro-spell {
+  font-size: x-large;
+  font-weight: lighter;
+  font-family: arial,sans-serif;
 }
 
 .intro-adj {
   font-style: italic;
+  font-size: medium;
 }
 
 .abs-center {
   position: absolute;
   margin-left:auto;
   margin-right:auto;
+}
+
+.intro-quote {
+  font-weight: bold;
+//  font-size: x-large;
+ //font-family: Courier, "Lucida Console", monospace;
 }
 
 /* INTRO-BUTTON---------*/
@@ -80,14 +94,16 @@ H1.home {
 .intro-bttn-arrow {
   position: relative;
   background: url(../images/down-arrow.png);
-  background-size: 70px 30px;
+  background-size: 90px 40px;
   background-repeat: no-repeat;
   height: 40px;
   width: 150px;
   display: block;
-  padding-left: 70px;
+  padding-left: 110px;
   cursor: pointer;
-
+ // font-family: Times, "Times New Roman", Georgia, serif;
+  font-size: x-large;
+  font-weight: bold;
 }
 
 
@@ -100,12 +116,12 @@ H1.home {
 .intro-speaker {
   background: url(../images/speaker.png);
   background-repeat: no-repeat;
-  background-size: 18px;
+  background-size: 21px;
   background-origin: border-box;
   background-position: right;
   padding-left: 10px;
-  width: 20px;
-  height: 20px;
+  width: 23px;
+  height: 23px;
   float: left;
   cursor: pointer;
 
