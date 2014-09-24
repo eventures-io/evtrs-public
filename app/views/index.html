@@ -10,18 +10,33 @@
     <section class="page-intro">
         <div class="container">
             <div class="abs-center intro-title" ng-hide="hidden">
-                <h1 class="home">WE ARE EV.EN.TUR.OUS</h1>
+                <h1 class="home">WE ARE EVENTUROUS</h1>
+                <span class="intro-spell">EV.EN.TUR.OUS</span><br/>
+                <div class="intro-pron">/eˈvenCHərəs,əd-/</div>
+                <div class="intro-speaker" ng-click="playAudio()"></div>
+                <br/>
+                <p class="intro-adj">adjective</p>
+                        <span class="intro-text">
+                            willing to take risks or to try out new methods, ideas, or experiences.
+                        </span><br/>
+                <span>"let's be eventurous"</span><br/>
+                <span class="intro-syn">synonyms</span>
+                : daring, intrepid, venturesome, bold, fearless, brave, unshrinking, dauntless;
+                <div class="intro-bttn-container">
+                    <span class="intro-bttn-arrow" ui-sref="base.services">MORE</span>
+                </div>
             </div>
-            <div class="abs-center intro-text" ng-hide="hidden">
-                <a class="btn btn-default" ui-sref="base.services">More</a>
-            </div>
-        </div>
+            <audio id="pron">
+                <source src="audio/eventures-pron.ogg" type="audio/ogg">
+                <source src="audio/eventures-pron.mp3" type="audio/mpeg">
+            </audio>
     </section>
 </script>
 
 <script type="text/ng-template" id="/base.part.html">
     <nav>
         <H1>NAV HERE</H1>
+
         <div>
             <a class="btn btn-default" ui-sref="intro">Home</a>
         </div>

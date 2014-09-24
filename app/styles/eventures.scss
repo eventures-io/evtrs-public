@@ -28,7 +28,7 @@ body {
    background: url("../images/bg-everest.jpg");
    background-size: cover;
    height: 100%;
-   border-bottom: 1px;
+   border-bottom: 3px solid;
 }
 
 .page-services {
@@ -41,20 +41,26 @@ body {
   height: 100%;
 }
 
+
+/* INTRO PAGE -----------------*/
+
 H1.home {
-color:white;
-font-size: 60px;
-text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  font-size: 60px;
+
 }
 
 .intro-title {
-  top: 60%;
+  top: 55%;
   left: calc(50% - 300px);
+  background: rgba(104,104,104,0.3);
+  border-radius: 5px;
+  color:white;
+  padding: 0px 25px 25px 25px;
+  margin-left: 30px;
 }
 
-.intro-text {
-  Top: 70%;
-  left: calc(50% - 1px);
+.intro-adj {
+  font-style: italic;
 }
 
 .abs-center {
@@ -63,6 +69,47 @@ text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
   margin-right:auto;
 }
 
+/* INTRO-BUTTON---------*/
+.intro-bttn-container {
+  border-top: 1px solid white;
+  padding-left: 35px;
+  padding-top: 18px;
+  margin-top: 15px;
+}
+
+.intro-bttn-arrow {
+  position: relative;
+  background: url(../images/down-arrow.png);
+  background-size: 70px 30px;
+  background-repeat: no-repeat;
+  height: 40px;
+  width: 150px;
+  display: block;
+  padding-left: 70px;
+  cursor: pointer;
+
+}
+
+
+/* INTRO-PRON---------*/
+
+.intro-pron {
+   float: left;
+}
+
+.intro-speaker {
+  background: url(../images/speaker.png);
+  background-repeat: no-repeat;
+  background-size: 18px;
+  background-origin: border-box;
+  background-position: right;
+  padding-left: 10px;
+  width: 20px;
+  height: 20px;
+  float: left;
+  cursor: pointer;
+
+}
 /* ANIMATIONS -------------------*/
 
 .page.ng-leave {
@@ -74,7 +121,7 @@ text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
   z-index: 8888;
 }
 
-/* page specific animations ------------------------ */
+/* page specific animations -------------- */
 
 /* content view -------------------------- */
 .content-view.ng-leave {
@@ -112,17 +159,17 @@ text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
   top:0;
 }
 
-.intro-text.ng-hide-add,
-.intro-text.ng-hide-remove {
-  -webkit-transition: 3s linear all;
-  transition: 3s linear all;
-  display:block!important;
-  opacity:1;
-}
-
-.intro-text.ng-hide {
-  opacity:0;
-}
+//.intro-text.ng-hide-add,
+//.intro-text.ng-hide-remove {
+//  -webkit-transition: 3s linear all;
+//  transition: 3s linear all;
+//  display:block!important;
+//  opacity:1;
+//}
+//
+//.intro-text.ng-hide {
+//  opacity:0;
+//}
 /* rotate and fall */
 @-webkit-keyframes rotateFall {
   0% {

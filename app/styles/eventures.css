@@ -3635,14 +3635,24 @@ H1.home {
   top: 60%;
   left: calc(50% - 300px); }
 
-.intro-text {
+.intro-text-container {
   Top: 70%;
-  left: calc(50% - 1px); }
+  left: calc(50% - 1px);
+  border: solid 2px white; }
+
+.intro-text {
+  color: #ffffff; }
+
+.intro-adj {
+  font-style: italic; }
 
 .abs-center {
   position: absolute;
   margin-left: auto;
   margin-right: auto; }
+
+.intro-border {
+  border-top: solid 2px white; }
 
 /* ANIMATIONS -------------------*/
 .page.ng-leave {
@@ -3651,7 +3661,7 @@ H1.home {
 .page.ng-enter {
   z-index: 8888; }
 
-/* page specific animations ------------------------ */
+/* page specific animations -------------- */
 /* content view -------------------------- */
 .content-view.ng-leave {
   -webkit-transform-origin: 0% 0%;

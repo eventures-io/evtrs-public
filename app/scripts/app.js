@@ -63,8 +63,7 @@ eventApp.config(function ($locationProvider, $stateProvider, $urlRouterProvider)
                 }
             }
         })
-})
-;
+});
 
 eventApp.controller ("ServicesController", function ($scope) {
     $scope.$on('$viewContentLoaded',
@@ -72,7 +71,7 @@ eventApp.controller ("ServicesController", function ($scope) {
             //alert (" in controller ");
 
         });
-})
+});
 
 
 eventApp.controller ("IntroController", function ($scope, $timeout) {
@@ -85,7 +84,12 @@ eventApp.controller ("IntroController", function ($scope, $timeout) {
     var unsetHidden = function($scope) {
         $scope.hidden = false;
     }
-})
+
+    $scope.playAudio = function() {
+        var audio =  document.getElementById("pron");
+        audio.play();
+    }
+});
 
 
 
