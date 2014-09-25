@@ -8,9 +8,8 @@
 <div ui-view class="page page-view"></div>
 
 <script type="text/ng-template" id="/intro.part.html">
-    <section class="page-intro">
-        <div class="container">
-            <div class="abs-center intro-title" ng-hide="hidden">
+    <div class="page-intro">
+            <section class="intro-title" ng-hide="hidden">
                 <h1 class="home">WE ARE EVENTUROUS</h1>
                 <span class="intro-spell">EV.EN.TUR.OUS</span><br/>
                 <div class="intro-pron">/eˈvenCHərəs,əd-/</div>
@@ -26,20 +25,51 @@
                 <div class="intro-bttn-container">
                     <span class="intro-bttn-arrow" ui-sref="base.services">MORE</span>
                 </div>
-            </div>
+            </section>
             <audio id="pron">
                 <source src="audio/eventures-pron.ogg" type="audio/ogg">
                 <source src="audio/eventures-pron.mp3" type="audio/mpeg">
             </audio>
-    </section>
+    </div>
 </script>
 
 <script type="text/ng-template" id="/base.part.html">
-    <nav>
-        <H1>NAV HERE</H1>
-        <div>
-            <a class="btn btn-default" ui-sref="intro">Home</a>
+    <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#evtrs-navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">EVENTURES</a>
         </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="evtrs-navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="hidden">
+                    <a href="/"></a>
+                </li>
+                <li class="page-scroll">
+                    <a ui-sref="base.services">Services</a>
+                </li>
+                <li class="page-scroll">
+                    <a ui-sref="base.about">About</a>
+                </li>
+                <li class="page-scroll">
+                    <a ui-sref="base.contact">Contact</a>
+                </li>
+                <li class="page-scroll">
+                    <a ui-sref="base.playground">Playground</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
     </nav>
     <div class="content-container">
         <div ui-view="content-view" class="page content-view"></div>
@@ -65,7 +95,6 @@
         <div class="container">
             <div class="row">
                 <h1>about</h1>
-
                 <div>
                     <a class="btn btn-default" ui-sref="base.services">Services</a>
                 </div>
@@ -76,11 +105,21 @@
 </script>
 
 <script type="text/ng-template" id="/contact.part.html">
-
     <section class="page-contact">
         <div class="container">
             <div class="row">
                 <h1>Contact</h1>
+            </div>
+        </div>
+        </div>
+    </section>
+</script>
+
+<script type="text/ng-template" id="/playground.part.html">
+    <section class="page-contact">
+        <div class="container">
+            <div class="row">
+                <h1>Playground</h1>
             </div>
         </div>
         </div>
@@ -104,5 +143,7 @@
 <!-- endbuild -->
 
 <script src="scripts/app.js"></script>
+<!-- TODO load with bower -->
+<script src="js/bootstrap.min.js"></script>
 
 </html>

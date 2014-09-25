@@ -63,6 +63,13 @@ eventApp.config(function ($locationProvider, $stateProvider, $urlRouterProvider)
                 }
             }
         })
+        .state('base.contact', {
+            url: "contact",
+            views: {
+                'content-view@base': { templateUrl: '/contact.part.html'
+                }
+            }
+        })
 });
 
 eventApp.controller ("ServicesController", function ($scope) {

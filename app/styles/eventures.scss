@@ -25,10 +25,12 @@ body {
 }
 
 .page-intro {
-   background: url("../images/bg-everest.jpg");
-   background-size: cover;
-   height: 100%;
-   border-bottom: 3px solid;
+  background: url("../images/bg-everest.jpg");
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  border-bottom: 3px solid;
+  position: relative;
 }
 
 .page-services {
@@ -41,29 +43,52 @@ body {
   height: 100%;
 }
 
+.content-view {
+  top: 50px;
+}
 
 /* INTRO PAGE -----------------*/
 
 H1.home {
   font-family: 'Coda Caption', sans-serif;
   font-size: 60px;
+ // display: inline;
 }
 
+//change name
 .intro-title {
-  top: 55%;
-  left: calc(50% - 300px);
-  background: rgba(104,104,104,0.5);
+  position:absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left:0;
+  right:0;
+  top: 30%;
+  background: rgba(104, 104, 104, 0.5);
   border-radius: 5px;
-  color:white;
+  color: white;
   padding: 0px 25px 25px 25px;
-  margin-left: 30px;
   font-size: large;
+}
+
+@media (min-width: 767px) {
+  .intro-title {
+    width: 700px
+  }
+}
+
+@media (max-width: 767px) {
+  .intro-title {
+    with:100%;
+    min-width: 350px;
+    margin-left: 2%;
+    margin-right: 2%;
+  }
 }
 
 .intro-spell {
   font-size: x-large;
   font-weight: lighter;
-  font-family: arial,sans-serif;
+  font-family: arial, sans-serif;
 }
 
 .intro-adj {
@@ -73,14 +98,12 @@ H1.home {
 
 .abs-center {
   position: absolute;
-  margin-left:auto;
-  margin-right:auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .intro-quote {
   font-weight: bold;
-//  font-size: x-large;
- //font-family: Courier, "Lucida Console", monospace;
 }
 
 /* INTRO-BUTTON---------*/
@@ -101,16 +124,14 @@ H1.home {
   display: block;
   padding-left: 110px;
   cursor: pointer;
- // font-family: Times, "Times New Roman", Georgia, serif;
   font-size: x-large;
   font-weight: bold;
 }
 
-
 /* INTRO-PRON---------*/
 
 .intro-pron {
-   float: left;
+  float: left;
 }
 
 .intro-speaker {
@@ -126,6 +147,7 @@ H1.home {
   cursor: pointer;
 
 }
+
 /* ANIMATIONS -------------------*/
 
 .page.ng-leave {
@@ -165,14 +187,14 @@ H1.home {
 /* Title slide in --------------- */
 .intro-title.ng-hide-add,
 .intro-title.ng-hide-remove {
-  -moz-transition:all 2s;
-  -webkit-transition:all 2s;
-  -o-transition:all 2s;
-  transition:all 2s;
+  -moz-transition: all 2s;
+  -webkit-transition: all 2s;
+  -o-transition: all 2s;
+  transition: all 2s;
 }
 
 .intro-title.ng-hide {
-  top:0;
+  top: 0;
 }
 
 //.intro-text.ng-hide-add,
