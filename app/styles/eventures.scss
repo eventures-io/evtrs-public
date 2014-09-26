@@ -49,40 +49,46 @@ body {
 
 /* INTRO PAGE -----------------*/
 
-H1.home {
-  font-family: 'Coda Caption', sans-serif;
-  font-size: 60px;
- // display: inline;
-}
-
-//change name
-.intro-title {
-  position:absolute;
-  margin-left: auto;
-  margin-right: auto;
-  left:0;
-  right:0;
-  top: 30%;
-  background: rgba(104, 104, 104, 0.5);
-  border-radius: 5px;
-  color: white;
-  padding: 0px 25px 25px 25px;
-  font-size: large;
-}
 
 @media (min-width: 767px) {
+  .intro-container {
+    width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
   .intro-title {
-    width: 700px
+    font-size: 60px;
   }
 }
 
 @media (max-width: 767px) {
-  .intro-title {
-    with:100%;
+  .intro-container {
+    with: 100%;
     min-width: 350px;
     margin-left: 2%;
     margin-right: 2%;
   }
+  .intro-title {
+    font-size: 45px;
+  }
+}
+
+.intro-title {
+  font-family: 'Coda Caption', sans-serif;
+  line-height: 90%;
+}
+
+//change name
+.intro-container {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 30%;
+  background: rgba(104, 104, 104, 0.5);
+  border-radius: 5px;
+  color: white;
+  padding: 25px;
+  font-size: large;
 }
 
 .intro-spell {
@@ -120,7 +126,7 @@ H1.home {
   background-size: 90px 40px;
   background-repeat: no-repeat;
   height: 40px;
-  width: 150px;
+  width: 270px;
   display: block;
   padding-left: 110px;
   cursor: pointer;
@@ -129,7 +135,6 @@ H1.home {
 }
 
 /* INTRO-PRON---------*/
-
 .intro-pron {
   float: left;
 }
@@ -151,7 +156,6 @@ H1.home {
 /* ANIMATIONS -------------------*/
 
 .page.ng-leave {
-
   z-index: 9999;
 }
 
@@ -185,15 +189,15 @@ H1.home {
 }
 
 /* Title slide in --------------- */
-.intro-title.ng-hide-add,
-.intro-title.ng-hide-remove {
+.intro-container.ng-hide-add,
+.intro-container.ng-hide-remove {
   -moz-transition: all 2s;
   -webkit-transition: all 2s;
   -o-transition: all 2s;
   transition: all 2s;
 }
 
-.intro-title.ng-hide {
+.intro-container.ng-hide {
   top: 0;
 }
 
