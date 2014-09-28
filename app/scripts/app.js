@@ -48,14 +48,6 @@ eventApp.config(function ($locationProvider, $stateProvider, $urlRouterProvider)
             url: "/",
             templateUrl: '/base.part.html'
         })
-        .state('base.services', {
-            url: "services",
-            views: {
-                'content-view@base': { templateUrl: '/services.part.html',
-                    controller: 'ServicesController'
-                }
-            }
-        })
         .state('base.about', {
             url: "about",
             views: {
@@ -70,9 +62,16 @@ eventApp.config(function ($locationProvider, $stateProvider, $urlRouterProvider)
                 }
             }
         })
+        .state('base.playground', {
+            url: "playground",
+            views: {
+                'content-view@base': { templateUrl: '/playground.part.html'
+                }
+            }
+        })
 });
 
-eventApp.controller ("ServicesController", function ($scope) {
+eventApp.controller ("MainController", function ($scope) {
     $scope.$on('$viewContentLoaded',
         function (event) {
             //alert (" in controller ");
@@ -85,7 +84,7 @@ eventApp.controller ("IntroController", function ($scope, $timeout) {
     $scope.hidden = true;
     $scope.$on('$viewContentLoaded',
         function (event) {
-            $timeout( function() {unsetHidden($scope) }, 200 );
+            $timeout( function() { unsetHidden($scope) }, 500 );
         });
 
     var unsetHidden = function($scope) {
@@ -98,6 +97,13 @@ eventApp.controller ("IntroController", function ($scope, $timeout) {
     }
 });
 
+
+window.onscroll = scroll;
+
+function scroll () {
+   // alert("scroll event detected! " + window.pageXOffset + " " + window.pageYOffset);
+    // note: you can use window.innerWidth and window.innerHeight to access the width and height of the viewing area
+}
 
 
 

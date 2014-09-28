@@ -1,5 +1,6 @@
 @import "bootstrap-evtrs";
 
+/*------ Global styles ----------*/
 html {
   overflow-y: hidden;
   height: 100%;
@@ -7,6 +8,8 @@ html {
 
 body {
   height: 100%;
+  font-family: 'Alegreya Sans SC', sans-serif;
+  color: #484848;
 }
 
 .content-container {
@@ -21,8 +24,37 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
+}
+
+
+.content-view {
+  bottom: 50px;
+  background: lightgrey;
+  overflow: hidden;
+}
+
+H1 {
+  font-weight: bolder;
+}
+
+
+
+/* NAVBAR -----------*/
+
+.navbar {
+  z-index: 9;
+}
+
+.navbar-brand {
+  font-size: xx-large;
+
 
 }
+
+
+/* INTRO PAGE -----------------*/
+
+
 
 .page-intro {
   background: url("../images/bg-everest.jpg");
@@ -33,29 +65,14 @@ body {
   position: relative;
 }
 
-.page-services {
-  background: lightgray;
-  height: 100%;
-}
-
-.page-about {
-  background: gray;
-  height: 100%;
-}
-
-.content-view {
-  top: 50px;
-}
-
-/* INTRO PAGE -----------------*/
-
 
 @media (min-width: 767px) {
   .intro-container {
     width: 700px;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 37%;
+   // margin-right: 40%;
   }
+
   .intro-title {
     font-size: 60px;
   }
@@ -78,7 +95,6 @@ body {
   line-height: 90%;
 }
 
-//change name
 .intro-container {
   position: absolute;
   left: 0;
@@ -153,14 +169,64 @@ body {
 
 }
 
+
+/* About page --------------------*/
+
+div.slant-left {
+ width: 90%;
+  height: 200%;
+  margin-top: -300px;
+  margin-left: -300px;
+  //use prefixless?
+  -ms-transform: rotate(10deg);
+  -webkit-transform: rotate(10deg);
+  transform: rotate(10deg);
+  background: #ffffff;
+  border-right: 1px solid #808080;
+}
+
+div.about-container {
+  position: absolute;
+  top:0;
+  left: 0;
+  //padding: 30px;
+}
+
+div.about-bg{
+  height: 100%;
+  width: 100%;
+  background: url(../images/bg-everest-about.jpg);
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: contain;
+}
+
+
+section {
+
+  padding-left: calc(15% - 50px);
+}
+
+p{
+  font-size: x-large;
+}
+
+article {
+  background: #E0E0E0;
+  border-radius: 3px;
+  padding: 15px;
+  width:calc(50% + 100px);
+
+}
+
 /* ANIMATIONS -------------------*/
 
 .page.ng-leave {
-  z-index: 9999;
+  z-index: 8;
 }
 
 .page.ng-enter {
-  z-index: 8888;
+  z-index: 1;
 }
 
 /* page specific animations -------------- */

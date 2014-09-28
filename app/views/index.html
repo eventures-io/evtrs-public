@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html ng-app="eventApp">
 <head>
-    <link href='http://fonts.googleapis.com/css?family=Coda+Caption:800' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Alegreya+Sans+SC:500,800,500italic|Coda+Caption:800' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="styles/eventures.css">
 </head>
 <body>
@@ -9,10 +9,11 @@
 
 <script type="text/ng-template" id="/intro.part.html">
     <div class="page-intro">
-            <section class="intro-container" ng-hide="hidden">
-                <span class="intro-title">WE</span><br/>
-                <span class="intro-title">ARE</span><br/>
-                <span class="intro-title">EVENTUROUS</span><br/>
+            <div class="intro-container" ng-hide="hidden">
+                <header>
+                <span class="intro-title">WE ARE</span><br/>
+                <span class="intro-title">EVENTUROUS</span>
+                </header><br/>
                 <span class="intro-spell">EV.EN.TUR.OUS</span><br/>
                 <div class="intro-pron">/eˈvenCHərəs,əd-/</div>
                 <div class="intro-speaker" ng-click="playAudio()"></div>
@@ -25,9 +26,9 @@
                 <span class="intro-syn">synonyms</span>
                 : daring, intrepid, venturesome, bold, fearless, brave, unshrinking, dauntless;
                 <div class="intro-bttn-container">
-                    <span class="intro-bttn-arrow" ui-sref="base.services">SEE MORE</span>
+                    <span class="intro-bttn-arrow" ui-sref="base.about">SEE MORE</span>
                 </div>
-            </section>
+            </div>
             <audio id="pron">
                 <source src="audio/eventures-pron.ogg" type="audio/ogg">
                 <source src="audio/eventures-pron.mp3" type="audio/mpeg">
@@ -36,7 +37,7 @@
 </script>
 
 <script type="text/ng-template" id="/base.part.html">
-    <nav class="navbar navbar-default navbar-fixed-top">
+    <nav class="navbar navbar-default navbar-fixed-bottom">
     <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header page-scroll">
@@ -55,9 +56,7 @@
                 <li class="hidden">
                     <a href="/"></a>
                 </li>
-                <li class="page-scroll">
-                    <a ui-sref="base.services">Services</a>
-                </li>
+                <!--TODO check page-scroll style-->
                 <li class="page-scroll">
                     <a ui-sref="base.about">About</a>
                 </li>
@@ -78,47 +77,61 @@
     </div>
 </script>
 
-<script type="text/ng-template" id="/services.part.html">
-    <div class="page-services">
-
-        <div class="container">
-            <div class="row">
-                <h1>services</h1>
-                <div>
-                    <a class="btn btn-default" ui-sref="base.about">About</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</script>
-
 <script type="text/ng-template" id="/about.part.html">
-    <section class="page page-about">
-        <div class="container">
-            <div class="row">
-                <h1>about</h1>
-                <div>
-                    <a class="btn btn-default" ui-sref="base.services">Services</a>
-                </div>
-            </div>
-        </div>
-        </div>
-    </section>
+<div class="about-bg">
+    -
+    <div class="slant-left"></div>
+
+    <div class="about-container">
+        <section>
+            <header>
+                <h1>>What we do</h1>
+            </header>
+            <article>
+                <p>
+                    We build interactive websites and applications, leveraging new and emerging technologies to create
+                    rich user experiences.
+                </p>
+
+                <p>
+                    We use creative UX design to maximize conversion rates on websites, and increase user productivity
+                    on mobile or desktop applications.
+                </p>
+            </article>
+        </section>
+        <section>
+            <header>
+                <h1>>Who we are</h1>
+            </header>
+            <article>
+                <p>
+                    We are a team of enthusiastic professionals, with years of experience building web applications.
+                    <br/>
+                    We are dedicated to help move the web forward.
+                </p>
+
+                <p>
+                    Get in touch <a ui-sref="base.contact">^</a>
+                </p>
+            </article>
+        </section>
+    </div>
+</div>
 </script>
 
 <script type="text/ng-template" id="/contact.part.html">
-    <section class="page-contact">
+    <div class="page">
         <div class="container">
             <div class="row">
                 <h1>Contact</h1>
             </div>
         </div>
         </div>
-    </section>
+    </div>
 </script>
 
 <script type="text/ng-template" id="/playground.part.html">
-    <section class="page-contact">
+    <section class="page">
         <div class="container">
             <div class="row">
                 <h1>Playground</h1>
