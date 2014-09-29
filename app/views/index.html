@@ -1,76 +1,84 @@
 <!DOCTYPE html>
 <html ng-app="eventApp">
 <head>
-    <link href='http://fonts.googleapis.com/css?family=Alegreya+Sans+SC:500,800,500italic|Coda+Caption:800' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Alegreya+Sans+SC:500,800,500italic|Coda+Caption:800'
+          rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="styles/eventures.css">
+    <script type="text/javascript"
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAWMXb4jIATujy9HJ13AHZ-VjmdgRjEZmE&sensor=false"></script>
+
+
 </head>
 <body>
 <div ui-view class="page page-view"></div>
 
 <script type="text/ng-template" id="/intro.part.html">
     <div class="page-intro">
-            <div class="intro-container" ng-hide="hidden">
-                <header>
+        <div class="intro-container" ng-hide="hidden">
+            <header>
                 <span class="intro-title">WE ARE</span><br/>
                 <span class="intro-title">EVENTUROUS</span>
-                </header><br/>
-                <span class="intro-spell">EV.EN.TUR.OUS</span><br/>
-                <div class="intro-pron">/eˈvenCHərəs,əd-/</div>
-                <div class="intro-speaker" ng-click="playAudio()"></div>
-                <br/>
-                <p class="intro-adj">adjective</p>
+            </header>
+            <br/>
+            <span class="intro-spell">EV.EN.TUR.OUS</span><br/>
+
+            <div class="intro-pron">/eˈvenCHərəs,əd-/</div>
+            <div class="intro-speaker" ng-click="playAudio()"></div>
+            <br/>
+
+            <p class="intro-adj">adjective</p>
                         <span class="intro-text">
                             willing to take risks or to try out new methods, ideas, or experiences.
                 </span><br/>
-                <span class="intro-quote">'let's be eventurous'</span><br/>
-                <span class="intro-syn">synonyms</span>
-                : daring, intrepid, venturesome, bold, fearless, brave, unshrinking, dauntless;
-                <div class="intro-bttn-container">
-                    <span class="intro-bttn-arrow" ui-sref="base.about">SEE MORE</span>
-                </div>
+            <span class="intro-quote">'let's be eventurous'</span><br/>
+            <span class="intro-syn">synonyms</span>
+            : daring, intrepid, venturesome, bold, fearless, brave, unshrinking, dauntless;
+            <div class="intro-bttn-container">
+                <span class="intro-bttn-arrow" ui-sref="base.about">SEE MORE</span>
             </div>
-            <audio id="pron">
-                <source src="audio/eventures-pron.ogg" type="audio/ogg">
-                <source src="audio/eventures-pron.mp3" type="audio/mpeg">
-            </audio>
+        </div>
+        <audio id="pron">
+            <source src="audio/eventures-pron.ogg" type="audio/ogg">
+            <source src="audio/eventures-pron.mp3" type="audio/mpeg">
+        </audio>
     </div>
 </script>
 
 <script type="text/ng-template" id="/base.part.html">
     <nav class="navbar navbar-default navbar-fixed-bottom">
-    <div class="container">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header page-scroll">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#evtrs-navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/">EVENTURES</a>
-        </div>
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#evtrs-navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">EVENTURES</a>
+            </div>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="evtrs-navbar-collapse">
-            <ul class="nav navbar-nav navbar-right">
-                <li class="hidden">
-                    <a href="/"></a>
-                </li>
-                <!--TODO check page-scroll style-->
-                <li class="page-scroll">
-                    <a ui-sref="base.about">About</a>
-                </li>
-                <li class="page-scroll">
-                    <a ui-sref="base.contact">Contact</a>
-                </li>
-                <li class="page-scroll">
-                    <a ui-sref="base.playground">Playground</a>
-                </li>
-            </ul>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="evtrs-navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="/"></a>
+                    </li>
+                    <!--TODO check page-scroll style-->
+                    <li class="page-scroll">
+                        <a ui-sref="base.about">About</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a ui-sref="base.contact">Contact</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a ui-sref="base.playground">Playground</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
         </div>
-        <!-- /.navbar-collapse -->
-    </div>
-    <!-- /.container-fluid -->
+        <!-- /.container-fluid -->
     </nav>
     <div class="content-container">
         <div ui-view="content-view" class="page content-view"></div>
@@ -78,56 +86,59 @@
 </script>
 
 <script type="text/ng-template" id="/about.part.html">
-<div class="about-bg">
-    -
-    <div class="slant-left"></div>
+    <div class="about-bg">
+        -
+        <div class="slant-left"></div>
 
-    <div class="about-container">
-        <section>
-            <header>
-                <h1>>What we do</h1>
-            </header>
-            <article>
-                <p>
-                    We build interactive websites and applications, leveraging new and emerging technologies to create
-                    rich user experiences.
-                </p>
+        <div class="about-container">
+            <section>
+                <header>
+                    <h1>>What we do</h1>
+                </header>
+                <article>
+                    <p>
+                        We build interactive websites and applications, leveraging new and emerging technologies to
+                        create
+                        rich user experiences.
+                    </p>
 
-                <p>
-                    We use creative UX design to maximize conversion rates on websites, and increase user productivity
-                    on mobile or desktop applications.
-                </p>
-            </article>
-        </section>
-        <section>
-            <header>
-                <h1>>Who we are</h1>
-            </header>
-            <article>
-                <p>
-                    We are a team of enthusiastic professionals, with years of experience building web applications.
-                    <br/>
-                    We are dedicated to help move the web forward.
-                </p>
+                    <p>
+                        We use creative UX design to maximize conversion rates on websites, and increase user
+                        productivity
+                        on mobile or desktop applications.
+                    </p>
+                </article>
+            </section>
+            <section>
+                <header>
+                    <h1>>Who we are</h1>
+                </header>
+                <article>
+                    <p>
+                        We are a team of enthusiastic professionals, with years of experience building web applications.
+                        <br/>
+                        We are dedicated to help move the web forward.
+                    </p>
 
-                <p>
-                    Get in touch <a ui-sref="base.contact">^</a>
-                </p>
-            </article>
-        </section>
+                    <p>
+                        Get in touch <a ui-sref="base.contact">^</a>
+                    </p>
+                </article>
+            </section>
+        </div>
     </div>
-</div>
 </script>
 
 <script type="text/ng-template" id="/contact.part.html">
-    <div class="page">
-        <div class="container">
-            <div class="row">
-                <h1>Contact</h1>
-            </div>
-        </div>
-        </div>
+    <div id="g-map" class="g-map"></div>
+
+    <div class="slant-right">
+
+
     </div>
+
+
+
 </script>
 
 <script type="text/ng-template" id="/playground.part.html">
@@ -160,5 +171,6 @@
 <script src="scripts/app.js"></script>
 <!-- TODO load with bower -->
 <script src="js/bootstrap.min.js"></script>
+
 
 </html>
