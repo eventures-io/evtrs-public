@@ -58,7 +58,8 @@ eventApp.config(function ($locationProvider, $stateProvider, $urlRouterProvider)
         .state('base.contact', {
             url: "contact",
             views: {
-                'content-view@base': { templateUrl: '/contact.part.html'
+                'content-view@base': { templateUrl: '/contact.part.html',
+                    controller: 'ContactController'
                 }
             }
         })
@@ -71,12 +72,12 @@ eventApp.config(function ($locationProvider, $stateProvider, $urlRouterProvider)
         })
 });
 
-eventApp.controller ("MainController", function ($scope) {
-    $scope.$on('$viewContentLoaded',
-        function (event) {
-            //alert (" in controller ");
+eventApp.controller ("ContactController", function ($scope) {
+    $scope.slant="slant-expanded";
 
-        });
+    $scope.toggleMap = function() {
+        $scope.slant = $scope.slant==="slant-expanded" ? "slant-retracted": "slant-expanded";
+    }
 });
 
 
