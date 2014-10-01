@@ -81,7 +81,7 @@
         <!-- /.container-fluid -->
     </nav>
     <div class="content-container">
-        <div ui-view="content-view" class="page content-view"></div>
+        <div ui-view="content-view" class="page content-view" ng-class="wrap"></div>
     </div>
 </script>
 
@@ -125,12 +125,10 @@
 </script>
 
 <script type="text/ng-template" id="/contact.part.html">
-    <div id="g-map" class="g-map"></div>
-        <div class="slant-right" ng-class="slant">
+    <google-map  address="Adress" zoom="16" ></google-map>
+        <div class="slant-right" ng-class="slant"> </div>
 
-        </div>
-
-        <div class="contact-bg">
+        <div class="contact-bg" ng-class="contact">
             <div class="contact-container">
                 <div>
                     <h2>
@@ -138,13 +136,12 @@
                     </h2>
                 </div>
                 <div>
-                    <span>
+                    <p>
                     Largo Rafael Bordalo Pinheiro, 16
-                    </span>
-                    <br/>
-                    <span>
+                    </p>
+                    <p>
                         1200 369 Lisbon
-                    </span> <br/>
+                    </p>
                     <span class="map-icon" ng-click="toggleMap()"></span>
                 </div>
                  <div>
@@ -161,7 +158,6 @@
                 </div>
             </div>
         </div>
-
 </script>
 
 <script type="text/ng-template" id="/playground.part.html">
@@ -174,6 +170,12 @@
         </div>
     </section>
 </script>
+
+<svg xmlns='http://www.w3.org/2000/svg' width='56' height='100'>
+    <rect width='56' height='100' fill='#FFFFFF'/>
+    <path d='M28 66L0 50L0 16L28 0L56 16L56 50L28 66L28 100' fill='none' stroke='#CCCCCC' stroke-width='1'/>
+    <path d='M28 0L28 34L0 50L0 84L28 100L56 84L56 50L28 34' fill='none' stroke='#E6E6E6' stroke-width='1'/>
+</svg>
 
 </body>
 

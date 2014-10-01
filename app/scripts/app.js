@@ -74,9 +74,13 @@ eventApp.config(function ($locationProvider, $stateProvider, $urlRouterProvider)
 
 eventApp.controller ("ContactController", function ($scope) {
     $scope.slant="slant-expanded";
+    $scope.contact="contact-bg-expanded";
+    $scope.wrap="contact-wrapper";
+    $scope.Adress = "Largo Rafael Bordalo Pinheiro 18 Portugal";
 
     $scope.toggleMap = function() {
         $scope.slant = $scope.slant==="slant-expanded" ? "slant-retracted": "slant-expanded";
+        $scope.contact = $scope.contact==="contact-bg-expanded" ? "contact-bg-retracted": "contact-bg-expanded";
     }
 });
 
@@ -98,39 +102,53 @@ eventApp.controller ("IntroController", function ($scope, $timeout) {
     }
 });
 
-
-window.onscroll = scroll;
-
-function scroll () {
-   // alert("scroll event detected! " + window.pageXOffset + " " + window.pageYOffset);
-    // note: you can use window.innerWidth and window.innerHeight to access the width and height of the viewing area
-}
-
-
-google.maps.event.addDomListener(window, 'load', init);
-
-function init() {
-    // Basic options for a simple Google Map
-    // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
-    var mapOptions = {
-        // How zoomed in you want the map to start at (always required)
-        zoom: 11,
-
-        // The latitude and longitude to center the map (always required)
-        center: new google.maps.LatLng(40.6700, -73.9400), // New York
-
-        // How you would like to style the map.
-        // This is where you would paste any style found on Snazzy Maps.
-        styles: [{featureType:'all',stylers:[{saturation:-100},{gamma:0.50}]}]
+eventApp.directive('googleMap', function () {
+    return {
+        restrict: "E",
+        template: "<div id='gmap'></div>",
+        scope: {
+            address: "=",
+            zoom: "="
+        },
+        controller: function ($scope) {
+            var geocoder;
+            var latlng;
+            var map;
+            var marker;
+            var initialize = function () {
+                geocoder = new google.maps.Geocoder();
+                latlng = new google.maps.LatLng(38.711526, -9.141712);
+                var mapOptions = {
+                    zoom: $scope.zoom,
+                    center: latlng,
+                //    mapTypeId: google.maps.MapTypeId.ROADMAP,
+                    styles: [{featureType:'all',stylers:[{saturation:-100},{gamma:0.50}]}]
+                };
+                map = new google.maps.Map
+                    (document.getElementById('gmap'), mapOptions);
+            };
+            var markAdressToMap = function () {
+                geocoder.geocode({ 'address': $scope.address },
+                    function (results, status)
+                    {
+                        if (status == google.maps.GeocoderStatus.OK) {
+                            map.setCenter(results[0].geometry.location);
+                            marker = new google.maps.Marker({
+                                map: map,
+                                position: results[0].geometry.location
+                            });
+                        }
+                    });
+            };
+            $scope.$watch("address", function () {
+                if ($scope.address != undefined) {
+                    markAdressToMap();
+                }
+            });
+            initialize();
+        }
     };
-
-    // Get the HTML DOM element that will contain your map
-    // We are using a div with id="map" seen below in the <body>
-    var mapElement = document.getElementById('g-map');
-
-    // Create the Google Map using out element and options defined above
-    var map = new google.maps.Map(mapElement, mapOptions);
-}
+});
 
 
 
