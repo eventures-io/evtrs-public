@@ -1,5 +1,25 @@
 @import "bootstrap-evtrs";
 
+/*-------- Mixins -----------*/
+
+.full-size {
+  width: 100%;
+  height: 100%;
+}
+
+@mixin rotate($deg) {
+  -ms-transform: rotate($deg);
+  -webkit-transform: rotate($deg);
+  transform: rotate($deg);
+}
+
+.transition {
+  -moz-transition: all 1s;
+  -webkit-transition: all 1s;
+  -o-transition: all 1s;
+  transition: all 1s;
+}
+
 /*------ Global styles ----------*/
 html {
   overflow-y: hidden;
@@ -22,8 +42,7 @@ body {
   top: 0;
   left: 0;
   position: absolute;
-  width: 100%;
-  height: 100%;
+  @extend .full-size;
 }
 
 .content-view {
@@ -50,17 +69,15 @@ H1 {
 .page-intro {
   background: url("../images/bg-everest.jpg");
   background-size: cover;
-  height: 100%;
-  width: 100%;
   border-bottom: 3px solid;
   position: relative;
+  @extend .full-size;
 }
 
 @media (min-width: 767px) {
   .intro-container {
     width: 700px;
     margin-left: 37%;
-    // margin-right: 40%;
   }
 
   .intro-title {
@@ -119,20 +136,17 @@ H1 {
 }
 
 /* INTRO-BUTTON---------*/
-.intro-bttn-container {
+div.intro-bttn-container {
   border-top: 1px solid white;
   padding-left: 35px;
   padding-top: 18px;
   margin-top: 15px;
 }
 
-.intro-bttn-arrow {
+span.intro-bttn-arrow {
   position: relative;
-  background: url(../images/down-arrow.png);
+  background: url(../images/down-arrow.png) no-repeat;
   background-size: 90px 40px;
-  background-repeat: no-repeat;
-  height: 40px;
-  width: 270px;
   display: block;
   padding-left: 110px;
   cursor: pointer;
@@ -141,16 +155,13 @@ H1 {
 }
 
 /* INTRO-PRON---------*/
-.intro-pron {
+div.intro-pron {
   float: left;
 }
 
 .intro-speaker {
-  background: url(../images/speaker.png);
-  background-repeat: no-repeat;
+  background: url(../images/speaker.png) no-repeat border-box right;
   background-size: 21px;
-  background-origin: border-box;
-  background-position: right;
   padding-left: 10px;
   width: 23px;
   height: 23px;
@@ -160,16 +171,47 @@ H1 {
 }
 
 /* ABOUT PAGE --------------------*/
+
+div.about-wrapper {
+  @extend .full-size;
+  background: #ffffff;
+  padding: 0;
+  margin: 0;
+}
+
+div.about-bg-img {
+  position: absolute;
+  background: url(../images/bg-hcomb.svg);
+  left: 0;
+  top: 15%;
+  height: 130px;
+  width: 600px;
+  @include rotate(-10deg);
+  z-index: 1;
+}
+
 div.about-container {
+  position: relative;
   background: #ffffff;
   -webkit-box-shadow: 8px 0 6px -6px lightgrey, -8px 0 6px -6px lightgrey;
-  -moz-box-shadow:  8px 0 6px -6px lightgrey, -8px 0 6px -6px lightgrey;
+  -moz-box-shadow: 8px 0 6px -6px lightgrey, -8px 0 6px -6px lightgrey;
   box-shadow: 8px 0 6px -6px lightgrey, -8px 0 6px -6px lightgrey;
   height: 100%;
+  width: 60%;
+  margin: 0 auto;
+  z-index: 4;
+
+}
+
+@media (max-width: 767px) {
+  div.about-container {
+    width: 90%;
+  }
+
 }
 
 section {
-  padding:3%;
+  padding: 3%;
 }
 
 p {
@@ -198,7 +240,7 @@ div.contact-bg-expanded {
 
 }
 
-div.contact-bg-retracted{
+div.contact-bg-retracted {
   width: 25%
 }
 
@@ -208,23 +250,22 @@ div.contact-bg {
   top: 0;
   height: 100%;
   padding-top: 10%;
-  -moz-transition: all 1s;
-  -webkit-transition: all 1s;
-  -o-transition: all 1s;
-  transition: all 1s;
+  @extend .transition;
   z-index: 2;
 }
 
-
 div.contact-container {
-   margin: 0 auto;
-   width: 400px;
-   height: 600px;
+  margin: 0 auto;
+  width: 350px;
+  height: 450px;
   text-align: center;
+  padding: 20px;
+  overflow: visible;
+
 }
 
 div.table-border {
-  border : 2px solid;
+  border: 2px solid;
 }
 
 span.map-icon {
@@ -235,33 +276,35 @@ span.map-icon {
   cursor: pointer;
 }
 
+@media (max-width: 767px) {
+
+  div.contact-container {
+    background: rgba(104, 104, 104, 0.9);
+  }
+
+  div.contact-bg-expanded {
+    width: 100%;
+  }
+}
+
 div.slant-retracted {
-  width:55%
+  width: 55%
 }
 
 div.slant-expanded {
-  width: 80%;
+  width: 90%;
 }
-
 
 div.slant-right {
   position: absolute;
   right: 0;
   top: 0;
   height: 150vh;
-  margin-top: -300px;
-  margin-right: -300px;
-  margin-bottom: 600px;
-  -ms-transform: rotate(-10deg);
-  -webkit-transform: rotate(-10deg);
-  transform: rotate(-10deg);
+  margin: -300px -300px 600px 0px;
   background: lightgrey;
   border-left: 1px solid #808080;
+  @include rotate(-10deg);
   z-index: 1;
-  -moz-transition: all 1s;
-  -webkit-transition: all 1s;
-  -o-transition: all 1s;
-  transition: all 1s;
 
 }
 
@@ -407,7 +450,6 @@ div.slant-right {
     -webkit-transform: scale(0.9);
   }
 }
-
 
 /* slide out to top */
 @keyframes slideOutUp {

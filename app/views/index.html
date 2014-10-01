@@ -6,8 +6,6 @@
     <link rel="stylesheet" href="styles/eventures.css">
     <script type="text/javascript"
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAWMXb4jIATujy9HJ13AHZ-VjmdgRjEZmE&sensor=false"></script>
-
-
 </head>
 <body>
 <div ui-view class="page page-view"></div>
@@ -86,78 +84,91 @@
 </script>
 
 <script type="text/ng-template" id="/about.part.html">
-    <div class="container about-container">
-        <div class="row">
-            <section>
-                <header>
-                    <h1>>What we do</h1>
-                </header>
-                <article>
-                    <p>
-                        We build interactive websites and applications, leveraging new and emerging technologies to
-                        create rich user experiences.
-                    </p>
+    <div class="about-wrapper">
+        <div class="about-bg-img">
 
-                    <p>
-                        We use creative UX design to maximize conversion rates on websites, and increase user
-                        productivity on mobile or desktop applications.
-                    </p>
-                </article>
-            </section>
-            <section>
-                <header>
-                    <h1>>Who we are</h1>
-                </header>
-                <article>
-                    <p>
-                        We are a team of enthusiastic professionals, with years of experience building web applications.
-                        <br/>
-                        We are dedicated to help move the web forward
-                    </p>
+        </div>
 
-                    <p>
-                        Get in touch <a ui-sref="base.contact">^</a>
-                    </p>
-                </article>
-            </section>
+        <div class="about-container">
+            <div class="row">
+                <section>
+                    <header>
+                        <h1>>What we do</h1>
+                    </header>
+                    <article>
+                        <p>
+                            We build interactive websites and applications, leveraging new and emerging technologies to
+                            create rich user interfaces.
+
+                        </p>
+
+                        <p>
+                            We use creative UX design to create immersive user experiences
+
+                            rephrase:
+                            We're driven by the Web's ability to unite and empower. That's why we're passionate about
+                            collaboration and the open source movement.
+                        </p>
+                    </article>
+                </section>
+                <section>
+                    <header>
+                        <h1>>Who we are</h1>
+                    </header>
+                    <article>
+                        <p>
+                            We are a team of enthusiastic professionals, with years of experience building web
+                            applications.
+                            <br/>
+                            We are dedicated to help move the web forward
+                        </p>
+
+                        <p>
+                            Get in touch <a ui-sref="base.contact">^</a>
+                        </p>
+                    </article>
+                </section>
+            </div>
         </div>
     </div>
 </script>
 
 <script type="text/ng-template" id="/contact.part.html">
-    <google-map  address="Adress" zoom="16" ></google-map>
-        <div class="slant-right" ng-class="slant"> </div>
+    <google-map address="Adress" zoom="16"></google-map>
+    <div class="slant-right" ng-class="slant"></div>
 
-        <div class="contact-bg" ng-class="contact">
-            <div class="contact-container">
-                <div>
-                    <h2>
+    <div class="contact-bg" ng-class="contact">
+        <div class="contact-container">
+            <div>
+                <h2>
                     LOCATION
-                    </h2>
-                </div>
-                <div>
-                    <p>
+                </h2>
+            </div>
+            <div>
+                <p>
                     Largo Rafael Bordalo Pinheiro, 16
-                    </p>
-                    <p>
-                        1200 369 Lisbon
-                    </p>
-                    <span class="map-icon" ng-click="toggleMap()"></span>
-                </div>
-                 <div>
-                     <h2>CONTACT</h2>
-                 </div>
-                <div>
-                    <p>
-                     info@eventures.io
-                    </p>
-                    <p>
-                        +32 486 399 727
+                </p>
 
-                    </p>
-                </div>
+                <p>
+                    1200 369 Lisbon
+                </p>
+                <span class="map-icon" ng-click="toggleMap()"></span>
+            </div>
+            <div>
+                <h2>CONTACT</h2>
+            </div>
+            <div>
+                <p>
+                    info@eventures.io
+                </p>
+
+                <p>
+                    +32 486 399 727
+                    (telephone service?)
+                </p>
             </div>
         </div>
+    </div>
 </script>
 
 <script type="text/ng-template" id="/playground.part.html">
@@ -171,11 +182,7 @@
     </section>
 </script>
 
-<svg xmlns='http://www.w3.org/2000/svg' width='56' height='100'>
-    <rect width='56' height='100' fill='#FFFFFF'/>
-    <path d='M28 66L0 50L0 16L28 0L56 16L56 50L28 66L28 100' fill='none' stroke='#CCCCCC' stroke-width='1'/>
-    <path d='M28 0L28 34L0 50L0 84L28 100L56 84L56 50L28 34' fill='none' stroke='#E6E6E6' stroke-width='1'/>
-</svg>
+
 
 </body>
 
