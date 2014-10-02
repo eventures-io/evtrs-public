@@ -28,7 +28,7 @@ html {
 
 body {
   height: 100%;
-  font-family: 'Alegreya Sans SC', sans-serif;
+  font-family: 'Fjalla One', sans-serif;;
   color: #484848;
 }
 
@@ -50,9 +50,24 @@ body {
 
 }
 
-H1 {
+h1,h2 {
   font-weight: bolder;
 }
+
+section {
+  padding: 3%;
+}
+
+p {
+  font-size: large;
+}
+
+article {
+  padding: 15px;
+
+}
+
+
 
 /* NAVBAR -----------*/
 
@@ -64,8 +79,20 @@ H1 {
   font-size: xx-large;
 }
 
-/* INTRO PAGE -----------------*/
+li.nav-bttn {
+  border-top: 2px transparent solid;
+}
 
+li.nav-bttn:hover, li.nav-bttn.active {
+  border-top: 2px darkgray solid;
+}
+
+li.nav-bttn.selected {
+  border-top: 2px orange solid;
+}
+
+
+/* INTRO PAGE -----------------*/
 .page-intro {
   background: url("../images/bg-everest.jpg");
   background-size: cover;
@@ -146,12 +173,14 @@ div.intro-bttn-container {
 span.intro-bttn-arrow {
   position: relative;
   background: url(../images/down-arrow.png) no-repeat;
-  background-size: 90px 40px;
+  background-size: 100px 40px;
   display: block;
   padding-left: 110px;
   cursor: pointer;
   font-size: x-large;
   font-weight: bold;
+  width: 250px;
+  height: 45px;
 }
 
 /* INTRO-PRON---------*/
@@ -179,16 +208,31 @@ div.about-wrapper {
   margin: 0;
 }
 
-div.about-bg-img {
+div.about-bg {
   position: absolute;
-  background: url(../images/bg-hcomb.svg);
-  left: 0;
-  top: 15%;
-  height: 130px;
-  width: 600px;
-  @include rotate(-10deg);
   z-index: 1;
+  width: 25%;
+  background-size: cover;
 }
+
+div.about-bgl{
+  @extend .about-bg;
+  left: 0;
+  top: 0;
+  height:100%;
+  background: url(../images/bg-pattern-left.svg) no-repeat;
+
+}
+
+div.about-bgr{
+  @extend .about-bg;
+  right: 0;
+  bottom: 0;
+  height:65%;
+  background: url(../images/bg-pattern-right.svg) no-repeat;
+  background-position: right bottom;
+}
+
 
 div.about-container {
   position: relative;
@@ -197,30 +241,25 @@ div.about-container {
   -moz-box-shadow: 8px 0 6px -6px lightgrey, -8px 0 6px -6px lightgrey;
   box-shadow: 8px 0 6px -6px lightgrey, -8px 0 6px -6px lightgrey;
   height: 100%;
-  width: 60%;
+  width: 64%;
+  max-width: 900px;
   margin: 0 auto;
   z-index: 4;
+  padding-left: 4%;
+  padding-right: 4%;
 
 }
 
 @media (max-width: 767px) {
   div.about-container {
     width: 90%;
+    padding:1%
   }
-
 }
 
-section {
-  padding: 3%;
-}
-
-p {
-  font-size: x-large;
-}
-
-article {
-  padding: 15px;
-
+div.header {
+  border-left: 1px gray solid;
+  padding-left: 5px;
 }
 
 /* CONTACT PAGE -----------------*/
@@ -304,6 +343,7 @@ div.slant-right {
   background: lightgrey;
   border-left: 1px solid #808080;
   @include rotate(-10deg);
+  @extend .transition;
   z-index: 1;
 
 }

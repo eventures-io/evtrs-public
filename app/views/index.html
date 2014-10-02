@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html ng-app="eventApp">
 <head>
-    <link href='http://fonts.googleapis.com/css?family=Alegreya+Sans+SC:500,800,500italic|Coda+Caption:800'
+    <link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Fjalla+One|Coda+Caption:800'
           rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="styles/eventures.css">
     <script type="text/javascript"
@@ -63,13 +64,13 @@
                         <a href="/"></a>
                     </li>
                     <!--TODO check page-scroll style-->
-                    <li class="page-scroll">
+                    <li class="nav-bttn" role="about">
                         <a ui-sref="base.about">About</a>
                     </li>
-                    <li class="page-scroll">
+                    <li class="nav-bttn" role="contact">
                         <a ui-sref="base.contact">Contact</a>
                     </li>
-                    <li class="page-scroll">
+                    <li class="nav-bttn" role="Playground">
                         <a ui-sref="base.playground">Playground</a>
                     </li>
                 </ul>
@@ -85,7 +86,7 @@
 
 <script type="text/ng-template" id="/about.part.html">
     <div class="about-wrapper">
-        <div class="about-bg-img">
+        <div class="about-bgl">
 
         </div>
 
@@ -93,17 +94,18 @@
             <div class="row">
                 <section>
                     <header>
-                        <h1>>What we do</h1>
+                        <div class="header"><h1> What we do</h1></div>
                     </header>
                     <article>
                         <p>
-                            We build interactive websites and applications, leveraging new and emerging technologies to
-                            create rich user interfaces.
-
+                            We build interactive web sites and applications, leveraging new and emerging technologies to
+                            craft rich user interfaces.
                         </p>
 
                         <p>
-                            We use creative UX design to create immersive user experiences
+                            We use creative UX design to ... immersive user experiences
+
+                            We understand the utility
 
                             rephrase:
                             We're driven by the Web's ability to unite and empower. That's why we're passionate about
@@ -130,11 +132,14 @@
                 </section>
             </div>
         </div>
+        <div class="about-bgr">
+
+        </div>
     </div>
 </script>
 
 <script type="text/ng-template" id="/contact.part.html">
-    <google-map address="Adress" zoom="16"></google-map>
+    <google-map address="address" zoom="16"></google-map>
     <div class="slant-right" ng-class="slant"></div>
 
     <div class="contact-bg" ng-class="contact">

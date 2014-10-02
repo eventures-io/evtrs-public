@@ -1,33 +1,25 @@
 'use strict'
-var eventApp = angular.module('eventApp', ['ui.router','ngAnimate']);
+var eventApp = angular.module('eventApp', ['ui.router', 'ngAnimate']);
 
-// set the configuration
 eventApp.run(['$rootScope', '$state', '$stateParams', '$window', function ($rootScope, $state, $stateParams, $window) {
 
-    $rootScope.$on('$stateChangeError',
-        function(event, toState, toParams, fromState, fromParams, error){
-            console.log('tostate error: ' + toState.url);
-        });
-
     $rootScope.$on('$stateChangeStart',
-        function (event, toState, toParams, fromState, fromParams) {
-//            event.preventDefault();
-            console.log('changing from ' + fromState.url + ' to ' +  toState.url  );
+        function(event, toState, toParams, fromState, fromParams, error) {
+          //  console.log('tostate: ' + toState.url);
+            $('li').removeClass('selected');
         });
 
-//    $rootScope.$on('$stateChangeSuccess',
-//        function (event, toState, toParams, fromState, fromParams) {
-//            console.log('changed from ' + fromState.url + ' to ' +  toState.url  );
-//
-//        });
-//
-//    $rootScope.$on('$stateNotFound',
-//        function(event, unfoundState, fromState, fromParams){
-//            console.log('state not found');
-//            console.log(unfoundState.to); // "lazy.state"
-//            console.log(unfoundState.toParams); // {a:1, b:2}
-//            console.log(unfoundState.options); // {inherit:false} + default options
-//        })
+    $rootScope.$on('$stateChangeSuccess',
+        function (event, toState, toParams, fromState, fromParams) {
+           // console.log('changed from ' + fromState.url + ' to ' +  toState.url  );
+            if (typeof toState.url != 'undefined') {
+
+                var url = toState.url.charAt(0).toUpperCase() + toState.url.slice(1);
+                $('li:contains(' + url + ')').addClass('selected');
+            }
+
+        });
+
 }]);
 
 
@@ -45,18 +37,19 @@ eventApp.config(function ($locationProvider, $stateProvider, $urlRouterProvider)
         })
         .state('base', {
             abstract: true,
-            url: "/",
+            url: '/',
             templateUrl: '/base.part.html'
         })
         .state('base.about', {
-            url: "about",
+            url: 'about',
             views: {
-                'content-view@base': { templateUrl: '/about.part.html'
+                'content-view@base': { templateUrl: '/about.part.html',
+                    controller: 'AboutController'
                 }
             }
         })
         .state('base.contact', {
-            url: "contact",
+            url: 'contact',
             views: {
                 'content-view@base': { templateUrl: '/contact.part.html',
                     controller: 'ContactController'
@@ -64,7 +57,7 @@ eventApp.config(function ($locationProvider, $stateProvider, $urlRouterProvider)
             }
         })
         .state('base.playground', {
-            url: "playground",
+            url: 'playground',
             views: {
                 'content-view@base': { templateUrl: '/playground.part.html'
                 }
@@ -72,43 +65,60 @@ eventApp.config(function ($locationProvider, $stateProvider, $urlRouterProvider)
         })
 });
 
-eventApp.controller ("ContactController", function ($scope) {
-    $scope.slant="slant-expanded";
-    $scope.contact="contact-bg-expanded";
-    $scope.wrap="contact-wrapper";
-    $scope.Adress = "Largo Rafael Bordalo Pinheiro 18 Portugal";
+eventApp.controller('BaseController', function($scope) {
+    $scope.$on('$viewContentLoaded',
+        function (event) {
+            $scope.wrap = '';
+        });
+});
 
-    $scope.toggleMap = function() {
-        $scope.slant = $scope.slant==="slant-expanded" ? "slant-retracted": "slant-expanded";
-        $scope.contact = $scope.contact==="contact-bg-expanded" ? "contact-bg-retracted": "contact-bg-expanded";
+eventApp.controller('AboutController', function ($scope) {
+    $scope.$on('$viewContentLoaded',
+        function (event) {
+              $('li:contains(About)').addClass('selected');
+        });
+});
+
+eventApp.controller('ContactController', function ($scope) {
+    $scope.slant = 'slant-expanded';
+    $scope.contact = 'contact-bg-expanded';
+    $scope.wrap = 'contact-wrapper';
+    $scope.address = 'Largo Rafael Bordalo Pinheiro 18 Portugal';
+
+    $scope.toggleMap = function () {
+        $scope.slant = $scope.slant === 'slant-expanded' ? 'slant-retracted' : 'slant-expanded';
+        $scope.contact = $scope.contact === 'contact-bg-expanded' ? 'contact-bg-retracted' : 'contact-bg-expanded';
     }
 });
 
 
-eventApp.controller ("IntroController", function ($scope, $timeout) {
+eventApp.controller('IntroController', function ($scope, $timeout) {
     $scope.hidden = true;
     $scope.$on('$viewContentLoaded',
         function (event) {
-            $timeout( function() { unsetHidden($scope) }, 500 );
+            //delay slide in animation
+            $timeout(function () {
+                unsetHidden($scope)
+            }, 500);
         });
 
-    var unsetHidden = function($scope) {
+    var unsetHidden = function ($scope) {
         $scope.hidden = false;
     }
 
-    $scope.playAudio = function() {
-        var audio =  document.getElementById("pron");
+    $scope.playAudio = function () {
+        var audio = document.getElementById('pron');
         audio.play();
     }
 });
 
 eventApp.directive('googleMap', function () {
     return {
-        restrict: "E",
+        restrict: 'E',
         template: "<div id='gmap'></div>",
         scope: {
-            address: "=",
-            zoom: "="
+            address: '=',
+            zoom: '='
         },
         controller: function ($scope) {
             var geocoder;
@@ -121,16 +131,19 @@ eventApp.directive('googleMap', function () {
                 var mapOptions = {
                     zoom: $scope.zoom,
                     center: latlng,
-                //    mapTypeId: google.maps.MapTypeId.ROADMAP,
-                    styles: [{featureType:'all',stylers:[{saturation:-100},{gamma:0.50}]}]
+                    styles: [
+                        {featureType: 'all', stylers: [
+                            {saturation: -100},
+                            {gamma: 0.50}
+                        ]}
+                    ]
                 };
                 map = new google.maps.Map
                     (document.getElementById('gmap'), mapOptions);
             };
             var markAdressToMap = function () {
                 geocoder.geocode({ 'address': $scope.address },
-                    function (results, status)
-                    {
+                    function (results, status) {
                         if (status == google.maps.GeocoderStatus.OK) {
                             map.setCenter(results[0].geometry.location);
                             marker = new google.maps.Marker({
@@ -140,7 +153,7 @@ eventApp.directive('googleMap', function () {
                         }
                     });
             };
-            $scope.$watch("address", function () {
+            $scope.$watch('address', function () {
                 if ($scope.address != undefined) {
                     markAdressToMap();
                 }
