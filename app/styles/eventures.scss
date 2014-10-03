@@ -79,15 +79,15 @@ article {
   font-size: xx-large;
 }
 
-li.nav-bttn {
+li.nav-btn {
   border-top: 2px transparent solid;
 }
 
-li.nav-bttn:hover, li.nav-bttn.active {
+li.nav-btn:hover, li.nav-btn.active {
   border-top: 2px darkgray solid;
 }
 
-li.nav-bttn.selected {
+li.nav-btn.selected {
   border-top: 2px orange solid;
 }
 
@@ -257,10 +257,10 @@ div.about-container {
   }
 }
 
-div.header {
-  border-left: 1px gray solid;
-  padding-left: 5px;
-}
+//div.header {
+//  border-left: 1px gray solid;
+//  padding-left: 5px;
+//}
 
 /* CONTACT PAGE -----------------*/
 
@@ -309,6 +309,7 @@ div.table-border {
 
 span.map-icon {
   background: url(../images/map-pointer.png) no-repeat center;
+  background-size: 28px;
   height: 50px;
   width: 55px;
   display: inline-block;
@@ -330,6 +331,21 @@ div.slant-retracted {
   width: 55%
 }
 
+div.close-btn {
+  position: relative;
+  top: 60%;
+  left: -25px;
+  background: url(../images/close-icon.png) no-repeat ;
+  background-size: 25px;
+  height: 40px;
+  cursor: pointer;
+  visibility: hidden;
+}
+
+div.close-btn-visible {
+    visibility: visible;
+}
+
 div.slant-expanded {
   width: 90%;
 }
@@ -348,6 +364,7 @@ div.slant-right {
 
 }
 
+
 /* ANIMATIONS -------------------*/
 
 .page.ng-leave {
@@ -361,17 +378,13 @@ div.slant-right {
 /* PAGE SPECIFIC ANIMATIONS -------------- */
 
 /* CONTENT VIEW -------------------------- */
-//.content-view.ng-leave {
-//  -webkit-transform-origin: 0% 0%;
-//  -webkit-animation: rotateFall 1s both ease-in;
-//  -moz-transform-origin: 0% 0%;
-//  -moz-animation: rotateFall 1s both ease-in;
-//  transform-origin: 0% 0%;
-//  animation: rotateFall 1s both ease-in;
-//}
-
 .content-view.ng-leave {
-
+  -webkit-transform-origin: 0% 0%;
+  -webkit-animation: rotateFall 1s both ease-in;
+  -moz-transform-origin: 0% 0%;
+  -moz-animation: rotateFall 1s both ease-in;
+  transform-origin: 0% 0%;
+  animation: rotateFall 1s both ease-in;
 }
 
 .content-view.ng-enter {
@@ -387,7 +400,7 @@ div.slant-right {
   animation: slideOutUp 0.9s both ease-out;
 }
 
-/* TITLE SLIDE IN --------------- */
+/* INTRO SLIDE IN --------------- */
 .intro-container.ng-hide-add,
 .intro-container.ng-hide-remove {
   -moz-transition: all 2s;
@@ -400,34 +413,23 @@ div.slant-right {
   top: 0;
 }
 
-//.intro-text.ng-hide-add,
-//.intro-text.ng-hide-remove {
-//  -webkit-transition: 3s linear all;
-//  transition: 3s linear all;
-//  display:block!important;
-//  opacity:1;
-//}
-//
-//.intro-text.ng-hide {
-//  opacity:0;
-//}
 /* rotate and fall */
 @-webkit-keyframes rotateFall {
   0% {
     -webkit-transform: rotateZ(0deg);
   }
   20% {
-    -webkit-transform: rotateZ(10deg);
+    -webkit-transform: rotateZ(3deg);
     -webkit-animation-timing-function: ease-out;
   }
   40% {
-    -webkit-transform: rotateZ(17deg);
+    -webkit-transform: rotateZ(7deg);
   }
   60% {
-    -webkit-transform: rotateZ(16deg);
+    -webkit-transform: rotateZ(6deg);
   }
   100% {
-    -webkit-transform: translateY(100%) rotateZ(17deg);
+    -webkit-transform: translateY(100%) rotateZ(7deg);
   }
 }
 
@@ -436,17 +438,17 @@ div.slant-right {
     -moz-transform: rotateZ(0deg);
   }
   20% {
-    -moz-transform: rotateZ(10deg);
+    -moz-transform: rotateZ(5deg);
     -moz-animation-timing-function: ease-out;
   }
   40% {
-    -moz-transform: rotateZ(17deg);
+    -moz-transform: rotateZ(9deg);
   }
   60% {
-    -moz-transform: rotateZ(16deg);
+    -moz-transform: rotateZ(8deg);
   }
   100% {
-    -moz-transform: translateY(100%) rotateZ(17deg);
+    -moz-transform: translateY(100%) rotateZ(9deg);
   }
 }
 
@@ -455,17 +457,17 @@ div.slant-right {
     transform: rotateZ(0deg);
   }
   20% {
-    transform: rotateZ(10deg);
+    transform: rotateZ(3deg);
     animation-timing-function: ease-out;
   }
   40% {
-    transform: rotateZ(17deg);
+    transform: rotateZ(7deg);
   }
   60% {
-    transform: rotateZ(16deg);
+    transform: rotateZ(6deg);
   }
   100% {
-    transform: translateY(100%) rotateZ(17deg);
+    transform: translateY(100%) rotateZ(7deg);
   }
 }
 

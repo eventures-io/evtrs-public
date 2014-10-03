@@ -4,14 +4,14 @@ var eventApp = angular.module('eventApp', ['ui.router', 'ngAnimate']);
 eventApp.run(['$rootScope', '$state', '$stateParams', '$window', function ($rootScope, $state, $stateParams, $window) {
 
     $rootScope.$on('$stateChangeStart',
-        function(event, toState, toParams, fromState, fromParams, error) {
-          //  console.log('tostate: ' + toState.url);
+        function (event, toState, toParams, fromState, fromParams, error) {
+            //  console.log('tostate: ' + toState.url);
             $('li').removeClass('selected');
         });
 
     $rootScope.$on('$stateChangeSuccess',
         function (event, toState, toParams, fromState, fromParams) {
-           // console.log('changed from ' + fromState.url + ' to ' +  toState.url  );
+            // console.log('changed from ' + fromState.url + ' to ' +  toState.url  );
             if (typeof toState.url != 'undefined') {
 
                 var url = toState.url.charAt(0).toUpperCase() + toState.url.slice(1);
@@ -65,7 +65,7 @@ eventApp.config(function ($locationProvider, $stateProvider, $urlRouterProvider)
         })
 });
 
-eventApp.controller('BaseController', function($scope) {
+eventApp.controller('BaseController', function ($scope) {
     $scope.$on('$viewContentLoaded',
         function (event) {
             $scope.wrap = '';
@@ -75,7 +75,7 @@ eventApp.controller('BaseController', function($scope) {
 eventApp.controller('AboutController', function ($scope) {
     $scope.$on('$viewContentLoaded',
         function (event) {
-              $('li:contains(About)').addClass('selected');
+            $('li:contains(About)').addClass('selected');
         });
 });
 
@@ -83,11 +83,13 @@ eventApp.controller('ContactController', function ($scope) {
     $scope.slant = 'slant-expanded';
     $scope.contact = 'contact-bg-expanded';
     $scope.wrap = 'contact-wrapper';
+    $scope.visible = '';
     $scope.address = 'Largo Rafael Bordalo Pinheiro 18 Portugal';
 
     $scope.toggleMap = function () {
         $scope.slant = $scope.slant === 'slant-expanded' ? 'slant-retracted' : 'slant-expanded';
         $scope.contact = $scope.contact === 'contact-bg-expanded' ? 'contact-bg-retracted' : 'contact-bg-expanded';
+        $scope.visible = $scope.slant === 'slant-expanded' ? '' : 'close-btn-visible';
     }
 });
 

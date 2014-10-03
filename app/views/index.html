@@ -64,13 +64,13 @@
                         <a href="/"></a>
                     </li>
                     <!--TODO check page-scroll style-->
-                    <li class="nav-bttn" role="about">
+                    <li class="nav-btn" role="about">
                         <a ui-sref="base.about">About</a>
                     </li>
-                    <li class="nav-bttn" role="contact">
+                    <li class="nav-btn" role="contact">
                         <a ui-sref="base.contact">Contact</a>
                     </li>
-                    <li class="nav-bttn" role="Playground">
+                    <li class="nav-btn" role="Playground">
                         <a ui-sref="base.playground">Playground</a>
                     </li>
                 </ul>
@@ -94,7 +94,7 @@
             <div class="row">
                 <section>
                     <header>
-                        <div class="header"><h1> What we do</h1></div>
+                        <div class="header"><h1>* What we do</h1></div>
                     </header>
                     <article>
                         <p>
@@ -115,14 +115,14 @@
                 </section>
                 <section>
                     <header>
-                        <h1>>Who we are</h1>
+                        <h1>* Who we are</h1>
                     </header>
                     <article>
                         <p>
                             We are a team of enthusiastic professionals, with years of experience building web
                             applications.
                             <br/>
-                            We are dedicated to help move the web forward
+                            We are dedicated to help the web move forward.
                         </p>
 
                         <p>
@@ -140,7 +140,9 @@
 
 <script type="text/ng-template" id="/contact.part.html">
     <google-map address="address" zoom="16"></google-map>
-    <div class="slant-right" ng-class="slant"></div>
+    <div class="slant-right" ng-class="slant">
+        <div class="close-btn" ng-class="visible"  ng-click="toggleMap()"></div>
+    </div>
 
     <div class="contact-bg" ng-class="contact">
         <div class="contact-container">
