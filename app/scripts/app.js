@@ -61,7 +61,7 @@ eventApp.config(function ($locationProvider, $stateProvider, $urlRouterProvider)
 eventApp.controller('BaseController', function ($scope) {
     $scope.$on('$viewContentLoaded',
         function (event) {
-            $scope.wrap = '';
+            $scope.overflow = 'of-visible';
         });
 });
 
@@ -75,7 +75,7 @@ eventApp.controller('AboutController', function ($scope) {
 eventApp.controller('ContactController', function ($scope) {
     $scope.slant = 'slant-expanded';
     $scope.contact = 'contact-bg-expanded';
-    $scope.wrap = 'contact-wrapper';
+    $scope.overflow= 'of-hidden';
     $scope.visible = '';
     $scope.address = 'Largo Rafael Bordalo Pinheiro 18 Portugal';
 

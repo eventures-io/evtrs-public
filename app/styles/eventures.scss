@@ -3,8 +3,8 @@
 /*-------- Mixins -----------*/
 
 .full-size {
-  width: 100%;
-  height: 100%;
+   width: 100%;
+   height: 100%;
 }
 
 @mixin rotate($deg) {
@@ -21,20 +21,15 @@
 }
 
 /*------ Global styles ----------*/
-html {
-  overflow-y: hidden;
-  height: 100%;
-}
 
 body {
-  height: 100%;
   font-family: 'Fjalla One', sans-serif;;
   color: #484848;
 }
 
 .content-container {
   position: relative;
-  height: 100%;
+  @extend .full-size;
 }
 
 .page {
@@ -47,7 +42,7 @@ body {
 
 .content-view {
   bottom: 50px;
-
+  @extend .full-size;
 }
 
 h1,h2 {
@@ -60,6 +55,7 @@ section {
 
 p {
   font-size: large;
+  font-family:  'Coda Caption', sans-serif
 }
 
 article {
@@ -67,7 +63,19 @@ article {
 
 }
 
+hr {
+  border: 0;
+  border-bottom: 2px dashed #ccc;
+  background: #999;
+  width: 50%;
+}
 
+.of-hidden {
+  overflow: hidden;
+}
+.of-visible {
+  overflow: visible;
+}
 
 /* NAVBAR -----------*/
 
@@ -96,9 +104,9 @@ li.nav-btn.selected {
 .page-intro {
   background: url("../images/bg-everest-bw.jpg");
   background-size: cover;
-  border-bottom: 3px solid;
   position: relative;
   @extend .full-size;
+
 }
 
 @media (min-width: 767px) {
@@ -199,17 +207,15 @@ div.intro-pron {
 
 }
 
-/* ABOUT PAGE --------------------*/
-
-div.about-wrapper {
-  @extend .full-size;
+/* ABOUT PAGE ---------*/
+div.page-about {
   background: white url(../images/dotted-bg-4px.png);
   padding: 0;
   margin: 0;
+  min-height: 100%;
 }
 
 div.about-container {
-  position: relative;
   background: #ffffff;
   -webkit-box-shadow: 8px 0 6px -6px lightgrey, -8px 0 6px -6px lightgrey;
   -moz-box-shadow: 8px 0 6px -6px lightgrey, -8px 0 6px -6px lightgrey;
@@ -221,7 +227,13 @@ div.about-container {
   z-index: 4;
   padding-left: 4%;
   padding-right: 4%;
+  padding-bottom: 50px;
 
+}
+
+div.skewed {
+  @include rotate(-4deg);
+  margin-bottom: 20px;
 }
 
 @media (max-width: 767px) {
@@ -231,16 +243,35 @@ div.about-container {
   }
 }
 
+span.emp{
+//  color:orange;
+}
+
+span.contact-icon {
+  width: 180px;
+  height: 40px;
+  background: url(../images/talk.svg) no-repeat right;
+  background-size: 40px;
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: underline;
+  font-size: x-large;
+  float:right;
+
+}
+
+
 
 /* CONTACT PAGE -----------------*/
 
-div.contact-wrapper {
-  overflow: hidden;
+
+div.page-contact {
+
+  @extend .full-size;
 }
 
 div#gmap {
-  width: 100%;
-  height: 100%;
+  @extend .full-size;
 
 }
 
@@ -360,18 +391,18 @@ a.contact-link {
 
 /* CONTENT VIEW -------------------------- */
 .content-view.ng-leave {
-  -webkit-transform-origin: 0% 0%;
-  -webkit-animation: rotateFall 1s both ease-in;
-  -moz-transform-origin: 0% 0%;
-  -moz-animation: rotateFall 1s both ease-in;
-  transform-origin: 0% 0%;
-  animation: rotateFall 1s both ease-in;
+  //-webkit-transform-origin: 0% 0%;
+  -webkit-animation: fadeOut 0.3s both ease-in;
+  //-moz-transform-origin: 0% 0%;
+  -moz-animation: fadeOut 0.3s both ease-in;
+  //transform-origin: 0% 0%;
+  animation: fadeOut 0.3s both ease-in;
 }
 
 .content-view.ng-enter {
-  -webkit-animation: scaleUp 0.5s both ease-in;
-  -moz-animation: scaleUp 0.5s both ease-in;
-  animation: scaleUp 0.5s both ease-in;
+  -webkit-animation: scaleUp 0.4s both ease-in;
+  -moz-animation: scaleUp 0.4s both ease-in;
+  animation: scaleUp 0.4s both ease-in;
 }
 
 /* PAGE VIEW ------------------------ */
@@ -384,95 +415,55 @@ a.contact-link {
 /* INTRO SLIDE IN --------------- */
 .intro-container.ng-hide-add,
 .intro-container.ng-hide-remove {
-  -moz-transition: all 2s;
-  -webkit-transition: all 2s;
-  -o-transition: all 2s;
-  transition: all 2s;
+  -moz-transition: all 1.3s;
+  -webkit-transition: all 1.3s;
+  -o-transition: all 1.3s;
+  transition: all 1.3s;
 }
 
 .intro-container.ng-hide {
   top: 0;
 }
 
-/* rotate and fall */
-@-webkit-keyframes rotateFall {
-  0% {
-    -webkit-transform: rotateZ(0deg);
-  }
-  20% {
-    -webkit-transform: rotateZ(10deg);
-    -webkit-animation-timing-function: ease-out;
-  }
-  40% {
-    -webkit-transform: rotateZ(17deg);
-  }
-  60% {
-    -webkit-transform: rotateZ(16deg);
-  }
-  100% {
-    -webkit-transform: translateY(100%) rotateZ(17deg);
-  }
-}
-
-@-moz-keyframes rotateFall {
-  0% {
-    -moz-transform: rotateZ(0deg);
-  }
-  20% {
-    -moz-transform: rotateZ(10deg);
-    -moz-animation-timing-function: ease-out;
-  }
-  40% {
-    -moz-transform: rotateZ(17deg);
-  }
-  60% {
-    -moz-transform: rotateZ(16deg);
-  }
-  100% {
-    -moz-transform: translateY(100%) rotateZ(17deg);
-  }
-}
-
-@keyframes rotateFall {
-  0% {
-    transform: rotateZ(0deg);
-  }
-  20% {
-    transform: rotateZ(10deg);
-    animation-timing-function: ease-out;
-  }
-  40% {
-    transform: rotateZ(17deg);
-  }
-  60% {
-    transform: rotateZ(16deg);
-  }
-  100% {
-    transform: translateY(100%) rotateZ(17deg);
-  }
-}
-
 /* scale up */
 @keyframes scaleUp {
   from {
     opacity: 0.3;
-    transform: scale(0.9);
+    transform: scale(0.95);
   }
 }
 
 @-moz-keyframes scaleUp {
   from {
     opacity: 0.3;
-    -moz-transform: scale(0.9);
+    -moz-transform: scale(0.95);
   }
 }
 
 @-webkit-keyframes scaleUp {
   from {
     opacity: 0.3;
-    -webkit-transform: scale(0.9);
+    -webkit-transform: scale(0.95);
   }
 }
+
+/* fade out */
+
+@keyframes fadeOut {
+  0% {opacity: 1;}
+  100% {opacity: 0;}
+}
+
+@-moz-keyframes fadeOut {
+  0% {opacity: 1;}
+  100% {opacity: 0;}
+}
+
+@-webkit-keyframes fadeOut {
+  0% {opacity: 1;}
+  100% {opacity: 0;}
+}
+
 
 /* slide out to top */
 @keyframes slideOutUp {
