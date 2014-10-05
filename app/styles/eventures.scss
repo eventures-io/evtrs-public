@@ -203,36 +203,10 @@ div.intro-pron {
 
 div.about-wrapper {
   @extend .full-size;
-  background: #ffffff;
+  background: white url(../images/dotted-bg-4px.png);
   padding: 0;
   margin: 0;
 }
-
-div.about-bg {
-  position: absolute;
-  z-index: 1;
-  width: 25%;
-  background-size: cover;
-}
-
-div.about-bgl{
-  @extend .about-bg;
-  left: 0;
-  top: 0;
-  height:100%;
-  background: url(../images/bg-pattern-left.svg) no-repeat;
-
-}
-
-div.about-bgr{
-  @extend .about-bg;
-  right: 0;
-  bottom: 0;
-  height:65%;
-  background: url(../images/bg-pattern-right.svg) no-repeat;
-  background-position: right bottom;
-}
-
 
 div.about-container {
   position: relative;
@@ -257,10 +231,6 @@ div.about-container {
   }
 }
 
-//div.header {
-//  border-left: 1px gray solid;
-//  padding-left: 5px;
-//}
 
 /* CONTACT PAGE -----------------*/
 
@@ -346,6 +316,7 @@ div.close-btn {
   height: 40px;
   cursor: pointer;
   visibility: hidden;
+  @extend .transition;
 }
 
 div.close-btn-visible {
@@ -429,17 +400,17 @@ a.contact-link {
     -webkit-transform: rotateZ(0deg);
   }
   20% {
-    -webkit-transform: rotateZ(3deg);
+    -webkit-transform: rotateZ(10deg);
     -webkit-animation-timing-function: ease-out;
   }
   40% {
-    -webkit-transform: rotateZ(7deg);
+    -webkit-transform: rotateZ(17deg);
   }
   60% {
-    -webkit-transform: rotateZ(6deg);
+    -webkit-transform: rotateZ(16deg);
   }
   100% {
-    -webkit-transform: translateY(100%) rotateZ(7deg);
+    -webkit-transform: translateY(100%) rotateZ(17deg);
   }
 }
 
@@ -448,17 +419,17 @@ a.contact-link {
     -moz-transform: rotateZ(0deg);
   }
   20% {
-    -moz-transform: rotateZ(3deg);
+    -moz-transform: rotateZ(10deg);
     -moz-animation-timing-function: ease-out;
   }
   40% {
-    -moz-transform: rotateZ(7deg);
+    -moz-transform: rotateZ(17deg);
   }
   60% {
-    -moz-transform: rotateZ(6deg);
+    -moz-transform: rotateZ(16deg);
   }
   100% {
-    -moz-transform: translateY(100%) rotateZ(7deg);
+    -moz-transform: translateY(100%) rotateZ(17deg);
   }
 }
 
@@ -467,17 +438,17 @@ a.contact-link {
     transform: rotateZ(0deg);
   }
   20% {
-    transform: rotateZ(3deg);
+    transform: rotateZ(10deg);
     animation-timing-function: ease-out;
   }
   40% {
-    transform: rotateZ(7deg);
+    transform: rotateZ(17deg);
   }
   60% {
-    transform: rotateZ(6deg);
+    transform: rotateZ(16deg);
   }
   100% {
-    transform: translateY(100%) rotateZ(7deg);
+    transform: translateY(100%) rotateZ(17deg);
   }
 }
 

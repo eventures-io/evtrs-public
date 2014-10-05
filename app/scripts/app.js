@@ -56,13 +56,6 @@ eventApp.config(function ($locationProvider, $stateProvider, $urlRouterProvider)
                 }
             }
         })
-//        .state('base.playground', {
-//            url: 'playground',
-//            views: {
-//                'content-view@base': { templateUrl: '/playground.part.html'
-//                }
-//            }
-//        })
 });
 
 eventApp.controller('BaseController', function ($scope) {
@@ -142,6 +135,8 @@ eventApp.directive('googleMap', function () {
                 };
                 map = new google.maps.Map
                     (document.getElementById('gmap'), mapOptions);
+
+                markAdressToMap();
             };
             var markAdressToMap = function () {
                 geocoder.geocode({ 'address': $scope.address },
@@ -155,11 +150,6 @@ eventApp.directive('googleMap', function () {
                         }
                     });
             };
-            $scope.$watch('address', function () {
-                if ($scope.address != undefined) {
-                    markAdressToMap();
-                }
-            });
             initialize();
         }
     };
