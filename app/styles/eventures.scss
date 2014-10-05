@@ -94,7 +94,7 @@ li.nav-btn.selected {
 
 /* INTRO PAGE -----------------*/
 .page-intro {
-  background: url("../images/bg-everest.jpg");
+  background: url("../images/bg-everest-bw.jpg");
   background-size: cover;
   border-bottom: 3px solid;
   position: relative;
@@ -296,11 +296,10 @@ div.contact-bg {
 div.contact-container {
   margin: 0 auto;
   width: 350px;
-  height: 450px;
+  height: 350px;
   text-align: center;
   padding: 20px;
-  overflow: visible;
-
+  border: 1px darkgray solid;
 }
 
 div.table-border {
@@ -324,6 +323,13 @@ span.map-icon {
 
   div.contact-bg-expanded {
     width: 100%;
+  }
+  span.map-icon {
+    visibility: hidden;
+  }
+
+  div.slant-right {
+    visibility: hidden;
   }
 }
 
@@ -364,6 +370,10 @@ div.slant-right {
 
 }
 
+a.contact-link {
+  color: #484848;
+  font-size: large;
+}
 
 /* ANIMATIONS -------------------*/
 
@@ -438,17 +448,17 @@ div.slant-right {
     -moz-transform: rotateZ(0deg);
   }
   20% {
-    -moz-transform: rotateZ(5deg);
+    -moz-transform: rotateZ(3deg);
     -moz-animation-timing-function: ease-out;
   }
   40% {
-    -moz-transform: rotateZ(9deg);
+    -moz-transform: rotateZ(7deg);
   }
   60% {
-    -moz-transform: rotateZ(8deg);
+    -moz-transform: rotateZ(6deg);
   }
   100% {
-    -moz-transform: translateY(100%) rotateZ(9deg);
+    -moz-transform: translateY(100%) rotateZ(7deg);
   }
 }
 

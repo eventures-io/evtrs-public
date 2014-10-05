@@ -3613,7 +3613,7 @@ body {
   height: 100%; }
 
 .page-intro {
-  background: url("../images/bg-everest.jpg");
+  background: url("../../assets/bg-everest.jpg");
   background-size: cover;
   height: 100%;
   border-bottom: 1px; }

@@ -56,13 +56,13 @@ eventApp.config(function ($locationProvider, $stateProvider, $urlRouterProvider)
                 }
             }
         })
-        .state('base.playground', {
-            url: 'playground',
-            views: {
-                'content-view@base': { templateUrl: '/playground.part.html'
-                }
-            }
-        })
+//        .state('base.playground', {
+//            url: 'playground',
+//            views: {
+//                'content-view@base': { templateUrl: '/playground.part.html'
+//                }
+//            }
+//        })
 });
 
 eventApp.controller('BaseController', function ($scope) {
