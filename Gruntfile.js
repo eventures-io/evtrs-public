@@ -15,6 +15,8 @@ module.exports = function (grunt) {
   // Time how long tasks take. Can help when optimizing build times
   require('time-grunt')(grunt);
 
+  var pkg = require('./package.json');
+
   // Define the configuration for all the tasks
   grunt.initConfig({
 
@@ -116,7 +118,6 @@ module.exports = function (grunt) {
         src: ['test/client/spec/{,*/}*.js']
       }
     },
-
     // Empties folders to start fresh
     clean: {
       dist: {
@@ -450,7 +451,22 @@ module.exports = function (grunt) {
       test: {
         NODE_ENV: 'test'
       }
-    }
+    },
+      buildcontrol: {
+          options: {
+              dir: 'dist',
+              commit: true,
+              push: true,
+              message: 'Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%'
+          },
+          heroku: {
+              options: {
+                  remote: 'git@heroku.com:eventures.git',
+                  branch: 'master',
+                  tag: pkg.version
+              }
+          }
+      }
   });
 
   // Used for delaying livereload until after server has restarted
