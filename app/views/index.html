@@ -43,7 +43,6 @@
 <script type="text/ng-template" id="/base.part.html">
     <nav class="navbar navbar-default navbar-fixed-bottom">
         <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header page-scroll">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#evtrs-navbar-collapse">
                     <span class="sr-only">Toggle navigation</span>
@@ -60,7 +59,6 @@
                     <li class="hidden">
                         <a href="/"></a>
                     </li>
-                    <!--TODO check page-scroll style-->
                     <li class="nav-btn" role="about">
                         <a ui-sref="base.about">About</a>
                     </li>
@@ -72,9 +70,7 @@
                     <!--</li>-->
                 </ul>
             </div>
-            <!-- /.navbar-collapse -->
         </div>
-        <!-- /.container-fluid -->
     </nav>
     <div class="content-container">
         <div ui-view="content-view" class="page content-view" ng-class="overflow"></div>
@@ -140,9 +136,6 @@
                         <!--<br/>-->
                         <!--We are dedicated to help the web move forward.-->
                     <!--</p>-->
-
-
-
                         <p>
                           <span class="contact-icon" ui-sref="base.contact">Talk to us</span>
                         </p>
@@ -204,7 +197,7 @@
 
 </body>
 
-<!-- build:js(.) scripts/vendor.js -->
+<!-- build:js(app) scripts/vendor.js -->
 <!-- bower:js -->
 <script src="bower_components/jquery/dist/jquery.js"></script>
 <script src="bower_components/es5-shim/es5-shim.js"></script>

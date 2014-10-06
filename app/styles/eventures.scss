@@ -8,15 +8,10 @@
 }
 
 @mixin rotate($deg) {
-  -ms-transform: rotate($deg);
-  -webkit-transform: rotate($deg);
   transform: rotate($deg);
 }
 
 .transition {
-  -moz-transition: all 1s;
-  -webkit-transition: all 1s;
-  -o-transition: all 1s;
   transition: all 1s;
 }
 
@@ -391,33 +386,21 @@ a.contact-link {
 
 /* CONTENT VIEW -------------------------- */
 .content-view.ng-leave {
-  //-webkit-transform-origin: 0% 0%;
-  -webkit-animation: fadeOut 0.3s both ease-in;
-  //-moz-transform-origin: 0% 0%;
-  -moz-animation: fadeOut 0.3s both ease-in;
-  //transform-origin: 0% 0%;
   animation: fadeOut 0.3s both ease-in;
 }
 
 .content-view.ng-enter {
-  -webkit-animation: scaleUp 0.4s both ease-in;
-  -moz-animation: scaleUp 0.4s both ease-in;
   animation: scaleUp 0.4s both ease-in;
 }
 
 /* PAGE VIEW ------------------------ */
 .page-view.ng-leave {
-  -webkit-animation: slideOutUp 0.9s both ease-out;
-  -moz-animation: slideOutUp 0.9s both ease-out;
   animation: slideOutUp 0.9s both ease-out;
 }
 
 /* INTRO SLIDE IN --------------- */
 .intro-container.ng-hide-add,
 .intro-container.ng-hide-remove {
-  -moz-transition: all 1.3s;
-  -webkit-transition: all 1.3s;
-  -o-transition: all 1.3s;
   transition: all 1.3s;
 }
 
@@ -433,37 +416,12 @@ a.contact-link {
   }
 }
 
-@-moz-keyframes scaleUp {
-  from {
-    opacity: 0.3;
-    -moz-transform: scale(0.95);
-  }
-}
-
-@-webkit-keyframes scaleUp {
-  from {
-    opacity: 0.3;
-    -webkit-transform: scale(0.95);
-  }
-}
-
 /* fade out */
 
 @keyframes fadeOut {
   0% {opacity: 1;}
   100% {opacity: 0;}
 }
-
-@-moz-keyframes fadeOut {
-  0% {opacity: 1;}
-  100% {opacity: 0;}
-}
-
-@-webkit-keyframes fadeOut {
-  0% {opacity: 1;}
-  100% {opacity: 0;}
-}
-
 
 /* slide out to top */
 @keyframes slideOutUp {
@@ -473,19 +431,6 @@ a.contact-link {
   }
 }
 
-@-moz-keyframes slideOutUp {
-
-  to {
-    -moz-transform: translateY(-100%);
-  }
-}
-
-@-webkit-keyframes slideOutUp {
-
-  to {
-    -webkit-transform: translateY(-100%);
-  }
-}
 
 
 

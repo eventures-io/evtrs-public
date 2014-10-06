@@ -300,7 +300,7 @@ module.exports = function (grunt) {
         options: {
           //collapseWhitespace: true,
           //collapseBooleanAttributes: true,
-          //removeCommentsFromCDATA: true,
+          //removeCommentsFromCDATA: true
           //removeOptionalTags: true
         },
         files: [{
@@ -394,10 +394,10 @@ module.exports = function (grunt) {
         }
       },
       dist: [
-        'compass:dist'
-  //      'imagemin',
-//        'svgmin',
-//        'htmlmin'
+        'compass:dist',
+       'imagemin',
+        'svgmin',
+        'htmlmin'
       ]
     },
 
