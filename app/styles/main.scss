@@ -7,10 +7,6 @@
    height: 100%;
 }
 
-@mixin rotate($deg) {
-  transform: rotate($deg);
-}
-
 .transition {
   transition: all 1s;
 }
@@ -166,14 +162,14 @@ li.nav-btn.selected {
 }
 
 /* INTRO-BUTTON---------*/
-div.intro-bttn-container {
+div.intro-btn-container {
   border-top: 1px solid white;
   padding-left: 35px;
   padding-top: 18px;
   margin-top: 15px;
 }
 
-span.intro-bttn-arrow {
+span.intro-btn-arrow {
   position: relative;
   background: url(../images/down-arrow.png) no-repeat;
   background-size: 100px 40px;
@@ -227,7 +223,7 @@ div.about-container {
 }
 
 div.skewed {
-  @include rotate(-4deg);
+  transform: rotate(-4deg);
   margin-bottom: 20px;
 }
 
@@ -255,11 +251,7 @@ span.contact-icon {
 
 }
 
-
-
 /* CONTACT PAGE -----------------*/
-
-
 div.page-contact {
 
   @extend .full-size;
@@ -361,7 +353,7 @@ div.slant-right {
   margin: -300px -300px 600px 0px;
   background: lightgrey;
   border-left: 1px solid #808080;
-  @include rotate(-10deg);
+  transform: rotate(-10deg);
   @extend .transition;
   z-index: 1;
 

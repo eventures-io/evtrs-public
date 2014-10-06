@@ -240,9 +240,9 @@ module.exports = function (grunt) {
         files: {
           src: [
             '<%= yeoman.dist %>/public/scripts/{,*/}*.js',
-            '<%= yeoman.dist %>/public/styles/{,*/}*.css',
-            '<%= yeoman.dist %>/public/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
-            '<%= yeoman.dist %>/public/styles/fonts/*'
+            '<%= yeoman.dist %>/public/styles/{,*/}*.css'
+           // '<%= yeoman.dist %>/public/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
+           // '<%= yeoman.dist %>/public/styles/fonts/*'
           ]
         }
       }
@@ -345,7 +345,9 @@ module.exports = function (grunt) {
             '.htaccess',
             'bower_components/**/*',
             'images/{,*/}*.{webp}',
-            'fonts/**/*'
+            'fonts/**/*',
+              'audio/**/*'
+
           ]
         }, {
           expand: true,
@@ -364,7 +366,9 @@ module.exports = function (grunt) {
           src: [
             'package.json',
             'server.js',
-            'lib/**/*'
+            'lib/**/*',
+              'Procfile',
+              '.env'
           ]
         }]
       },
@@ -407,7 +411,7 @@ module.exports = function (grunt) {
     cssmin: {
        dist: {
          files: {
-           '<%= yeoman.dist %>/styles/main.css': [
+           '<%= yeoman.dist %>/public/styles/main.css': [
              '.tmp/styles/{,*/}*.css',
              '<%= yeoman.app %>/styles/{,*/}*.css'
            ]
@@ -417,9 +421,9 @@ module.exports = function (grunt) {
     uglify: {
        dist: {
          files: {
-           '<%= yeoman.dist %>/scripts/app.js': [
-             '<%= yeoman.dist %>/scripts/app.js'
-           ]
+           '<%= yeoman.dist %>/scripts/script.js': [
+             '<%= yeoman.dist %>/scripts/script.js'
+          ]
          }
        }
     },
