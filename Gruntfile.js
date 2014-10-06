@@ -216,7 +216,7 @@ module.exports = function (grunt) {
         httpFontsPath: '/styles/fonts',
         relativeAssets: false,
         assetCacheBuster: false,
-        raw: 'Sass::Script::Number.precision = 10\n',
+        raw: 'Sass::Script::Number.precision = 10\n'
 
 
       },
@@ -417,8 +417,8 @@ module.exports = function (grunt) {
     uglify: {
        dist: {
          files: {
-           '<%= yeoman.dist %>/scripts/scripts.js': [
-             '<%= yeoman.dist %>/scripts/scripts.js'
+           '<%= yeoman.dist %>/scripts/app.js': [
+             '<%= yeoman.dist %>/scripts/app.js'
            ]
          }
        }

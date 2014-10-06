@@ -1,11 +1,23 @@
-<!DOCTYPE html>
-<html ng-app="eventApp">
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<base href="/">
+<title>Eventures</title>
+<meta name="description" content="We are a product design and development company">
+<meta name="viewport" content="width=device-width">
     <link href='http://fonts.googleapis.com/css?family=Fjalla+One|Coda+Caption:800|Kreon:700'
           rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="styles/eventures.css">
+    <link rel="stylesheet" href="styles/main.css">
     </head>
-<body>
+<body ng-app="eventApp">
+<!--[if lt IE 7]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
 <div ui-view class="page page-view"></div>
 
 <script type="text/ng-template" id="/intro.part.html">
@@ -193,27 +205,37 @@
     </section>
 </script>
 
+<!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
+    ga('create', 'UA-XXXXX-X');
+    ga('send', 'pageview');
+</script>
+
+<!--[if lt IE 9]>
+<script src="bower_components/es5-shim/es5-shim.js"></script>
+<script src="bower_components/json3/lib/json3.min.js"></script>
+<![endif]-->
 
 </body>
 
 <!-- build:js(app) scripts/vendor.js -->
 <!-- bower:js -->
 <script src="bower_components/jquery/dist/jquery.js"></script>
-<script src="bower_components/es5-shim/es5-shim.js"></script>
 <script src="bower_components/angular/angular.js"></script>
-<script src="bower_components/json3/lib/json3.min.js"></script>
-<script src="bower_components/angular-resource/angular-resource.js"></script>
-<script src="bower_components/angular-cookies/angular-cookies.js"></script>
-<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
 <script src="bower_components/angular-animate/angular-animate.js"></script>
 <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
 <!-- endbower -->
+<script src="js/bootstrap.min.js"></script>
+<script src="scripts/app.js"></script>
 <!-- endbuild -->
 
-<script src="scripts/app.js"></script>
-<script src="js/bootstrap.min.js"></script>
-    <script type="text/javascript"
+
+<script type="text/javascript"
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAWMXb4jIATujy9HJ13AHZ-VjmdgRjEZmE&sensor=false"></script>
 
 
