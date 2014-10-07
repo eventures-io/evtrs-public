@@ -147,7 +147,7 @@ module.exports = function (grunt) {
     // Add vendor prefixed styles
     autoprefixer: {
       options: {
-        browsers: ['last 1 version']
+       // browsers: ['last 1 version']
       },
       dist: {
         files: [{
@@ -416,15 +416,6 @@ module.exports = function (grunt) {
              '.tmp/styles/{,*/}*.css',
              '<%= yeoman.app %>/styles/{,*/}*.css'
            ]
-         }
-       }
-    },
-    uglify: {
-       dist: {
-         files: {
-           '<%= yeoman.dist %>/scripts/script.js': [
-             '<%= yeoman.dist %>/scripts/script.js'
-          ]
          }
        }
     },

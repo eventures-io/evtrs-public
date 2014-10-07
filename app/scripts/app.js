@@ -33,7 +33,7 @@ eventApp.config(function ($locationProvider, $stateProvider, $urlRouterProvider)
         .state('intro', {
             url: '/',
             templateUrl: '/intro.part.html',
-            controller: 'IntroController'
+            controller: 'introController'
         })
         .state('base', {
             abstract: true,
@@ -44,7 +44,7 @@ eventApp.config(function ($locationProvider, $stateProvider, $urlRouterProvider)
             url: 'about',
             views: {
                 'content-view@base': { templateUrl: '/about.part.html',
-                    controller: 'AboutController'
+                    controller: 'aboutController'
                 }
             }
         })
@@ -52,27 +52,31 @@ eventApp.config(function ($locationProvider, $stateProvider, $urlRouterProvider)
             url: 'contact',
             views: {
                 'content-view@base': { templateUrl: '/contact.part.html',
-                    controller: 'ContactController'
+                    controller: 'contactController'
                 }
             }
         })
 });
 
-eventApp.controller('BaseController', function ($scope) {
-    $scope.$on('$viewContentLoaded',
-        function (event) {
-            $scope.overflow = 'of-visible';
-        });
-});
 
-eventApp.controller('AboutController', function ($scope) {
+eventApp.controller('aboutController', function ($scope) {
+    $scope.$parent.seo = {
+        pageTitle : 'About',
+        pageDescripton: 'About eventures'
+    };
+
     $scope.$on('$viewContentLoaded',
         function (event) {
             $('li:contains(About)').addClass('selected');
         });
 });
 
-eventApp.controller('ContactController', function ($scope, $rootScope) {
+eventApp.controller('contactController', function ($scope, $rootScope) {
+    $scope.$parent.seo = {
+        pageTitle : 'Contact',
+        pageDescripton: 'Contact us'
+    };
+
     $scope.slant = 'slant-expanded';
     $scope.contact = 'contact-bg-expanded';
     $scope.overflow= 'of-hidden';
@@ -89,7 +93,7 @@ eventApp.controller('ContactController', function ($scope, $rootScope) {
 });
 
 
-eventApp.controller('IntroController', function ($scope, $timeout) {
+eventApp.controller('introController', function ($scope, $timeout) {
     $scope.hidden = true;
     $scope.$on('$viewContentLoaded',
         function (event) {
