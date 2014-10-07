@@ -11,11 +11,16 @@
   transition: all 1s;
 }
 
+$primary-color: #484848;
+
+$secondary-color: #e8b81d;
+
+
 /*------ Global styles ----------*/
 
 body {
   font-family: 'Fjalla One', sans-serif;;
-  color: #484848;
+  color: $primary-color;
 }
 
 .content-container {
@@ -56,8 +61,8 @@ article {
 
 hr {
   border: 0;
-  border-bottom: 2px dashed #ccc;
-  background: #999;
+  border-bottom: 2px dashed $primary-color;
+  background: $secondary-color ;
   width: 50%;
 }
 
@@ -88,7 +93,7 @@ li.nav-btn:hover, li.nav-btn.active {
 }
 
 li.nav-btn.selected {
-  border-top: 2px orange solid;
+  border-top: 2px $secondary-color solid;
 }
 
 /* INTRO PAGE -----------------*/
@@ -236,19 +241,20 @@ div.skewed {
 }
 
 span.emp {
-  //  color:orange;
+  //  color:$secondary-color;
 }
 
-span.contact-icon {
+div.contact-btn {
   width: 180px;
   height: 40px;
   background: url(../images/talk.svg) no-repeat right;
   background-size: 40px;
   cursor: pointer;
-  display: inline-block;
   text-decoration: underline;
-  font-size: x-large;
+  font-size: xx-large;
   float: right;
+  margin-top: 40px;
+  margin-bottom: 50px;
 
 }
 
@@ -370,7 +376,7 @@ div.slant-right {
 }
 
 a.contact-link {
-  color: #484848;
+  color: $primary-color;
   font-size: large;
 }
 

@@ -1,22 +1,28 @@
 <!doctype html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js"> <!--<![endif]-->
 <head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="fragment" content="!">
-<title>Eventures</title>
-<meta name="description" content="We are a product design and development company">
-<meta name="viewport" content="width=device-width">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="fragment" content="!">
+    <meta name="google-site-verification" content="aWL2BydOlsGnxRjvxPDM2BK9KigENNZCQAyxaqy3ePc" />
+    <title>Eventures</title>
+    <meta name="description" content="We are a product design and development company">
+    <meta name="viewport" content="width=device-width">
     <link href='http://fonts.googleapis.com/css?family=Fjalla+One|Coda+Caption:800|Kreon:700'
           rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="styles/main.css">
-    </head>
+</head>
 <body ng-app="eventApp">
 <!--[if lt IE 7]>
-<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+    your browser</a> to improve your experience.</p>
 <![endif]-->
 <div ui-view class="page page-view"></div>
 
@@ -78,7 +84,7 @@
                         <a ui-sref="base.contact">Contact</a>
                     </li>
                     <!--<li class="nav-btn" role="Playground">-->
-                        <!--<a ui-sref="base.playground">Playground</a>-->
+                    <!--<a ui-sref="base.playground">Playground</a>-->
                     <!--</li>-->
                 </ul>
             </div>
@@ -102,46 +108,55 @@
                     <article>
                         <p>
                             We are a digital product design and development company based in sunny Lisbon.
-                            We use best of class UX design   We leverage proven and emerging technologies   and use proven development methodologies
-
-
-                            We build interactive web sites and applications,
                         </p>
 
                         <p>
-                            We use creative UX design to create seamless user experiences.
-                            Our designs are the result of an iterative process,  achieved in close concertation with our customers and end users.
+                            We use best of class UX design to build websites and applications with seamless user
+                            experiences.
                         </p>
+
                         <p>
-                            We understand how implementation of best practices help producing a better result faster.
-                            There is no excuse for sloppy code.
+                            Our designs are the result of an iterative process, achieved in close collaboration with our
+                            customers.
                         </p>
+
                         <p>
+                            We leverage proven and emerging technologies to enable creative solutions that stand out.
+                        </p>
+
+                        <p>
+                            We are very resolute in adopting best practices, be it in the design, build or deployment
+                            stages.
+                        </p>
+
+                        <p>
+                            We take pride in delivering fully tested products, at each iteration.
 
                         </p>
+
                     </article>
                 </section>
-                <hr/>
+
                 <section>
                     <header>
                         <div class="skewed">
-                        <h1><span class="emp">*&nbsp;</span>Who we are</h1>
+                            <h1><span class="emp">*&nbsp;</span>Who we are</h1>
                         </div>
                     </header>
                     <article>
-                        <!--<p>-->
-                            <!--We are a team of enthusiastic professionals, with years of experience building web-->
-                            <!--applications.-->
-                            <!--<br/>-->
-                            <!--We are dedicated to help the web move forward.-->
-                        <!--</p>-->
-
                         <p>
-                          <span class="contact-icon" ui-sref="base.contact">Talk to us</span>
+                            We are a team of enthusiastic professionals, with years of experience building web
+                            applications.
+                         </p>
+                         <p>
+                            We are dedicated to help the web move forward.
                         </p>
                     </article>
+                    <br/>
+                    <hr/>
+
+                    <div class="contact-btn" ui-sref="base.contact">Talk to us</div>
                 </section>
-               <hr/>
             </div>
         </div>
     </div>
@@ -150,7 +165,7 @@
 <script type="text/ng-template" id="/contact.part.html">
     <google-map address="address" zoom="16"></google-map>
     <div class="slant-right" ng-class="slant">
-        <div class="close-btn" ng-class="visible"  ng-click="toggleMap()"></div>
+        <div class="close-btn" ng-class="visible" ng-click="toggleMap()"></div>
     </div>
 
     <div class="contact-bg" ng-class="contact">
@@ -195,10 +210,17 @@
 
 <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
 <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
     ga('create', 'UA-XXXXX-X');
     ga('send', 'pageview');
@@ -224,7 +246,7 @@
 
 
 <script type="text/javascript"
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAWMXb4jIATujy9HJ13AHZ-VjmdgRjEZmE&sensor=false"></script>
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAWMXb4jIATujy9HJ13AHZ-VjmdgRjEZmE&sensor=false"></script>
 
 
 </html>
