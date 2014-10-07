@@ -72,7 +72,7 @@ eventApp.controller('AboutController', function ($scope) {
         });
 });
 
-eventApp.controller('ContactController', function ($scope) {
+eventApp.controller('ContactController', function ($scope, $rootScope) {
     $scope.slant = 'slant-expanded';
     $scope.contact = 'contact-bg-expanded';
     $scope.overflow= 'of-hidden';
@@ -83,6 +83,8 @@ eventApp.controller('ContactController', function ($scope) {
         $scope.slant = $scope.slant === 'slant-expanded' ? 'slant-retracted' : 'slant-expanded';
         $scope.contact = $scope.contact === 'contact-bg-expanded' ? 'contact-bg-retracted' : 'contact-bg-expanded';
         $scope.visible = $scope.slant === 'slant-expanded' ? '' : 'close-btn-visible';
+        $rootScope.$broadcast('map-toggled' , $scope.slant);
+
     }
 });
 
@@ -116,16 +118,36 @@ eventApp.directive('googleMap', function () {
             zoom: '='
         },
         controller: function ($scope) {
+
+            $scope.$on('map-toggled', function(event, data) {
+                if(data === 'slant-retracted'){
+                 enableControls();
+                }
+                else {
+                  disableControls();
+                }
+            });
+
+
             var geocoder;
             var latlng;
             var map;
             var marker;
+            var enableControls = function() {
+             map.setOptions({disableDefaultUI: false});
+            }
+
+            var disableControls = function() {
+                map.setOptions({disableDefaultUI: true});
+            }
+
             var initialize = function () {
                 geocoder = new google.maps.Geocoder();
                 latlng = new google.maps.LatLng(38.711526, -9.141712);
                 var mapOptions = {
                     zoom: $scope.zoom,
                     center: latlng,
+                    disableDefaultUI: true,
                     styles: [
                         {featureType: 'all', stylers: [
                             {saturation: -100},
@@ -137,6 +159,8 @@ eventApp.directive('googleMap', function () {
                     (document.getElementById('gmap'), mapOptions);
 
                 markAdressToMap();
+
+
             };
             var markAdressToMap = function () {
                 geocoder.geocode({ 'address': $scope.address },
@@ -151,6 +175,9 @@ eventApp.directive('googleMap', function () {
                     });
             };
             initialize();
+
+
+
         }
     };
 });

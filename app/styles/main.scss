@@ -3,8 +3,8 @@
 /*-------- Mixins -----------*/
 
 .full-size {
-   width: 100%;
-   height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 .transition {
@@ -36,7 +36,7 @@ body {
   @extend .full-size;
 }
 
-h1,h2 {
+h1, h2 {
   font-weight: bolder;
 }
 
@@ -46,7 +46,7 @@ section {
 
 p {
   font-size: large;
-  font-family:  'Coda Caption', sans-serif
+  font-family: 'Coda Caption', sans-serif
 }
 
 article {
@@ -64,6 +64,7 @@ hr {
 .of-hidden {
   overflow: hidden;
 }
+
 .of-visible {
   overflow: visible;
 }
@@ -90,7 +91,6 @@ li.nav-btn.selected {
   border-top: 2px orange solid;
 }
 
-
 /* INTRO PAGE -----------------*/
 .page-intro {
   background: url("../images/bg-everest-bw.jpg");
@@ -100,26 +100,28 @@ li.nav-btn.selected {
 
 }
 
-@media (min-width: 767px) {
+@media (min-width: 800px) {
   .intro-container {
-    width: 700px;
+    width: 55%;
+    max-width: 700px;
     margin-left: 37%;
+    top: 30%;
   }
 
   .intro-title {
-    font-size: 60px;
+    font-size: 250%;
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 800px) {
   .intro-container {
     with: 100%;
-    min-width: 350px;
     margin-left: 2%;
     margin-right: 2%;
+    top: 10%;
   }
   .intro-title {
-    font-size: 45px;
+    font-size: 180%;
   }
 }
 
@@ -132,7 +134,6 @@ li.nav-btn.selected {
   position: absolute;
   left: 0;
   right: 0;
-  top: 30%;
   background: rgba(104, 104, 104, 0.7);
   border-radius: 5px;
   color: white;
@@ -203,7 +204,7 @@ div.page-about {
   background: white url(../images/dotted-bg-4px.png);
   padding: 0;
   margin: 0;
-  min-height: 100%;
+  @extend .full-size;
 }
 
 div.about-container {
@@ -222,20 +223,20 @@ div.about-container {
 
 }
 
+@media (max-width: 800px) {
+  div.about-container {
+    width: 90%;
+    padding: 1%
+  }
+}
+
 div.skewed {
   transform: rotate(-4deg);
   margin-bottom: 20px;
 }
 
-@media (max-width: 767px) {
-  div.about-container {
-    width: 90%;
-    padding:1%
-  }
-}
-
-span.emp{
-//  color:orange;
+span.emp {
+  //  color:orange;
 }
 
 span.contact-icon {
@@ -247,7 +248,7 @@ span.contact-icon {
   display: inline-block;
   text-decoration: underline;
   font-size: x-large;
-  float:right;
+  float: right;
 
 }
 
@@ -288,6 +289,15 @@ div.contact-container {
   text-align: center;
   padding: 20px;
   border: 1px darkgray solid;
+  border-radius: 4px;
+}
+
+@media (max-width: 380px) {
+
+  div.contact-container {
+    width:90%;
+    padding:10px;
+  }
 }
 
 div.table-border {
@@ -303,7 +313,7 @@ span.map-icon {
   cursor: pointer;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 800px) {
 
   div.contact-container {
     background: rgba(104, 104, 104, 0.9);
@@ -329,7 +339,7 @@ div.close-btn {
   position: relative;
   top: 60%;
   left: -25px;
-  background: url(../images/close-icon.png) no-repeat ;
+  background: url(../images/close-icon.png) no-repeat;
   background-size: 25px;
   height: 40px;
   cursor: pointer;
@@ -338,7 +348,7 @@ div.close-btn {
 }
 
 div.close-btn-visible {
-    visibility: visible;
+  visibility: visible;
 }
 
 div.slant-expanded {
@@ -391,13 +401,17 @@ a.contact-link {
 }
 
 /* INTRO SLIDE IN --------------- */
-.intro-container.ng-hide-add,
-.intro-container.ng-hide-remove {
-  transition: all 1.3s;
-}
 
-.intro-container.ng-hide {
-  top: 0;
+@media (min-width: 800px) {
+
+  .intro-container.ng-hide-add,
+  .intro-container.ng-hide-remove {
+    transition: all 1.3s;
+  }
+
+  .intro-container.ng-hide {
+    top: 0;
+  }
 }
 
 /* scale up */
@@ -411,8 +425,12 @@ a.contact-link {
 /* fade out */
 
 @keyframes fadeOut {
-  0% {opacity: 1;}
-  100% {opacity: 0;}
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 /* slide out to top */
