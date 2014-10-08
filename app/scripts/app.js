@@ -61,7 +61,7 @@ eventApp.config(function ($locationProvider, $stateProvider, $urlRouterProvider)
 
 eventApp.controller('aboutController', function ($scope) {
     $scope.$parent.seo = {
-        pageTitle : 'About',
+        pageTitle: 'About',
         pageDescripton: 'About eventures'
     };
 
@@ -75,13 +75,13 @@ eventApp.controller('aboutController', function ($scope) {
 
 eventApp.controller('contactController', function ($scope, $rootScope) {
     $scope.$parent.seo = {
-        pageTitle : 'Contact',
+        pageTitle: 'Contact',
         pageDescripton: 'Contact us'
     };
 
     $scope.slant = 'slant-expanded';
     $scope.contact = 'contact-bg-expanded';
-    $scope.overflow= 'of-hidden';
+    $scope.overflow = 'of-hidden';
     $scope.visible = '';
     $scope.mob = '';
     $scope.address = 'Largo Rafael Bordalo Pinheiro 18 Portugal';
@@ -91,7 +91,7 @@ eventApp.controller('contactController', function ($scope, $rootScope) {
         $scope.contact = $scope.contact === 'contact-bg-expanded' ? 'contact-bg-retracted' : 'contact-bg-expanded';
         $scope.visible = $scope.slant === 'slant-expanded' ? '' : 'close-btn-visible';
         $scope.mob = $scope.mob === '' ? 'close-btn-mob-visible' : '';
-        $rootScope.$broadcast('map-toggled' , $scope.slant);
+        $rootScope.$broadcast('map-toggled', $scope.slant);
 
     }
 });
@@ -127,25 +127,25 @@ eventApp.directive('googleMap', function () {
         },
         controller: function ($scope) {
 
-            $scope.$on('map-toggled', function(event, data) {
-                if(data === 'slant-retracted'){
-                 enableControls();
+            $scope.$on('map-toggled', function (event, data) {
+                if (data === 'slant-retracted') {
+                    enableControls();
                 }
                 else {
-                  disableControls();
+                    disableControls();
                 }
             });
-
 
             var geocoder;
             var latlng;
             var map;
             var marker;
-            var enableControls = function() {
-             map.setOptions({disableDefaultUI: false});
+
+            var enableControls = function () {
+                map.setOptions({disableDefaultUI: false});
             }
 
-            var disableControls = function() {
+            var disableControls = function () {
                 map.setOptions({disableDefaultUI: true});
             }
 

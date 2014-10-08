@@ -257,22 +257,11 @@ div.contact-btn {
 
 /* CONTACT PAGE -----------------*/
 div.page-contact {
-
   @extend .full-size;
 }
 
 div#gmap {
   @extend .full-size;
-
-}
-
-div.contact-bg-expanded {
-  width: 70%;
-
-}
-
-div.contact-bg-retracted {
-  width: 25%
 }
 
 div.contact-bg {
@@ -285,6 +274,15 @@ div.contact-bg {
   z-index: 2;
 }
 
+div.contact-bg-expanded {
+  width: 70%;
+
+}
+
+div.contact-bg-retracted {
+  width: 25%
+}
+
 div.contact-container {
   margin: 0 auto;
   width: 350px;
@@ -293,18 +291,6 @@ div.contact-container {
   padding: 20px;
   border: 1px darkgray solid;
   border-radius: 4px;
-}
-
-@media (max-width: 380px) {
-
-  div.contact-container {
-    width: 90%;
-    padding: 10px;
-  }
-}
-
-div.table-border {
-  border: 2px solid;
 }
 
 span.map-icon {
@@ -316,6 +302,16 @@ span.map-icon {
   cursor: pointer;
 }
 
+/*------- Media mobile ------*/
+@media (max-width: 380px) {
+
+  div.contact-container {
+    width: 90%;
+    padding: 10px;
+  }
+}
+
+/*------ Media pad ---------*/
 @media (max-width: 800px) {
 
   div.contact-container {
@@ -330,10 +326,6 @@ span.map-icon {
     width: 0%
   }
 
-  div.slant-right {
-    visibility: hidden;
-  }
-
   div.close-btn-mob {
     position: absolute;
     bottom: 65px;
@@ -343,7 +335,7 @@ span.map-icon {
     width: 30px;
     height: 30px;
     //absolute pos. empty div
-    padding:1px;
+    padding: 1px;
     cursor: pointer;
     visibility: hidden;
     transition: all 1s;
@@ -356,11 +348,8 @@ span.map-icon {
   }
 }
 
+/*---------Media desktop ---------*/
 @media (min-width: 800px) {
-  div.close-btn-visible {
-    visibility: visible;
-  }
-
   div.slant-expanded {
     width: 90%;
   }
@@ -379,27 +368,37 @@ span.map-icon {
 
   }
 
-div.close-btn {
-  position: relative;
-  top: 60%;
-  left: -25px;
-  background: url(../images/close-icon.png) no-repeat;
-  background-size: 25px;
-  height: 40px;
-  cursor: pointer;
-  visibility: hidden;
-  transition: all 1s;
-}
-
-
-
   div.slant-retracted {
     width: 55%
   }
 
+  div.contact-bg-expanded {
+    width: 70%;
+  }
+
+  div.contact-bg-retracted {
+    width: 25%
+  }
+
+  div.close-btn {
+    position: relative;
+    top: 60%;
+    left: -25px;
+    background: url(../images/close-icon.png) no-repeat;
+    background-size: 25px;
+    height: 40px;
+    cursor: pointer;
+    visibility: hidden;
+    transition: all 1s;
+  }
+
+  div.close-btn-visible {
+    visibility: visible;
+  }
+
 }
 
-  a.contact-link {
+a.contact-link {
   color: $primary-color;
   font-size: large;
 }
