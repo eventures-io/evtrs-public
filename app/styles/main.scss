@@ -7,14 +7,9 @@
   height: 100%;
 }
 
-.transition {
-  transition: all 1s;
-}
-
 $primary-color: #484848;
 
 $secondary-color: #e8b81d;
-
 
 /*------ Global styles ----------*/
 
@@ -62,7 +57,7 @@ article {
 hr {
   border: 0;
   border-bottom: 2px dashed $primary-color;
-  background: $secondary-color ;
+  background: $secondary-color;
   width: 50%;
 }
 
@@ -209,7 +204,6 @@ div.page-about {
   background: white url(../images/dotted-bg-4px.png);
   padding: 0;
   margin: 0;
-  @extend .full-size;
 }
 
 div.about-container {
@@ -224,6 +218,8 @@ div.about-container {
   z-index: 4;
   padding-left: 4%;
   padding-right: 4%;
+  //investigate: parent fills the height of child container when overflow hidden set
+  overflow: hidden;
   padding-bottom: 50px;
 
 }
@@ -245,6 +241,7 @@ span.emp {
 }
 
 div.contact-btn {
+  position: relative;
   width: 180px;
   height: 40px;
   background: url(../images/talk.svg) no-repeat right;
@@ -284,7 +281,7 @@ div.contact-bg {
   top: 0;
   height: 100%;
   padding-top: 10%;
-  @extend .transition;
+  transition: all 1s;
   z-index: 2;
 }
 
@@ -301,8 +298,8 @@ div.contact-container {
 @media (max-width: 380px) {
 
   div.contact-container {
-    width:90%;
-    padding:10px;
+    width: 90%;
+    padding: 10px;
   }
 }
 
@@ -328,18 +325,59 @@ span.map-icon {
   div.contact-bg-expanded {
     width: 100%;
   }
-  span.map-icon {
-    visibility: hidden;
+
+  div.contact-bg-retracted {
+    width: 0%
   }
 
   div.slant-right {
     visibility: hidden;
   }
+
+  div.close-btn-mob {
+    position: absolute;
+    bottom: 65px;
+    right: 15px;
+    background: url(../images/close-icon-mob.png) no-repeat;
+    background-size: 25px;
+    width: 30px;
+    height: 30px;
+    //absolute pos. empty div
+    padding:1px;
+    cursor: pointer;
+    visibility: hidden;
+    transition: all 1s;
+    z-index: 4;
+
+  }
+
+  div.close-btn-mob-visible {
+    visibility: visible;
+  }
 }
 
-div.slant-retracted {
-  width: 55%
-}
+@media (min-width: 800px) {
+  div.close-btn-visible {
+    visibility: visible;
+  }
+
+  div.slant-expanded {
+    width: 90%;
+  }
+
+  div.slant-right {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 150vh;
+    margin: -300px -300px 600px 0px;
+    background: lightgrey;
+    border-left: 1px solid #808080;
+    transform: rotate(-10deg);
+    transition: all 1s;
+    z-index: 1;
+
+  }
 
 div.close-btn {
   position: relative;
@@ -350,32 +388,18 @@ div.close-btn {
   height: 40px;
   cursor: pointer;
   visibility: hidden;
-  @extend .transition;
+  transition: all 1s;
 }
 
-div.close-btn-visible {
-  visibility: visible;
-}
 
-div.slant-expanded {
-  width: 90%;
-}
 
-div.slant-right {
-  position: absolute;
-  right: 0;
-  top: 0;
-  height: 150vh;
-  margin: -300px -300px 600px 0px;
-  background: lightgrey;
-  border-left: 1px solid #808080;
-  transform: rotate(-10deg);
-  @extend .transition;
-  z-index: 1;
+  div.slant-retracted {
+    width: 55%
+  }
 
 }
 
-a.contact-link {
+  a.contact-link {
   color: $primary-color;
   font-size: large;
 }

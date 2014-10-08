@@ -66,6 +66,8 @@ eventApp.controller('aboutController', function ($scope) {
     };
 
     $scope.$on('$viewContentLoaded',
+        //For some reason the stateChangeSuccess listener does not select the about menu when coming from the intro page.
+        //Due to abstract state not being loaded maybe?
         function (event) {
             $('li:contains(About)').addClass('selected');
         });
@@ -81,12 +83,14 @@ eventApp.controller('contactController', function ($scope, $rootScope) {
     $scope.contact = 'contact-bg-expanded';
     $scope.overflow= 'of-hidden';
     $scope.visible = '';
+    $scope.mob = '';
     $scope.address = 'Largo Rafael Bordalo Pinheiro 18 Portugal';
 
     $scope.toggleMap = function () {
         $scope.slant = $scope.slant === 'slant-expanded' ? 'slant-retracted' : 'slant-expanded';
         $scope.contact = $scope.contact === 'contact-bg-expanded' ? 'contact-bg-retracted' : 'contact-bg-expanded';
         $scope.visible = $scope.slant === 'slant-expanded' ? '' : 'close-btn-visible';
+        $scope.mob = $scope.mob === '' ? 'close-btn-mob-visible' : '';
         $rootScope.$broadcast('map-toggled' , $scope.slant);
 
     }
@@ -179,9 +183,6 @@ eventApp.directive('googleMap', function () {
                     });
             };
             initialize();
-
-
-
         }
     };
 });
