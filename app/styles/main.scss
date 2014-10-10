@@ -81,6 +81,7 @@ hr {
 
 li.nav-btn {
   border-top: 2px transparent solid;
+  font-size: large;
 }
 
 li.nav-btn:hover, li.nav-btn.active {
@@ -89,6 +90,81 @@ li.nav-btn:hover, li.nav-btn.active {
 
 li.nav-btn.selected {
   border-top: 2px $secondary-color solid;
+}
+
+/* ---- SOCIAL NAV -----*/
+
+div.navbar-social {
+  float:right;
+ display: none;
+  margin-right: 20px;
+  padding-top: 12px;
+}
+
+@media (max-width: 767px) {
+  div.social-m {
+    display: inline;
+
+  }
+}
+
+@media (min-width: 767px) {
+  div.social-d {
+    display: inline;
+  }
+}
+
+ul.nav-social {
+  list-style: none;
+  display: inline;
+  padding: 0;
+}
+
+li.social {
+  display: inline;
+}
+
+a.social {
+  height: 25px;
+  width: 25px;
+  display: inline-block;
+  padding: 2px;
+
+}
+
+a.social:hover {
+  background-color: black;
+}
+
+a.twitter {
+  background: url(../images/twitter.png) no-repeat;
+  background-size: contain;
+  @extend .social;
+
+}
+
+a.gplus {
+  background: url(../images/gplus.png) no-repeat;
+  background-size: contain;
+  @extend .social;
+}
+
+a.facebook {
+  background: url(../images/facebook.png) no-repeat;
+  background-size: contain;
+  @extend .social;
+
+
+}
+
+span.separator {
+  display: inline-block;
+  margin-left: 20px;
+  margin-right: 20px;
+  height: 25px;
+  width: 2px;
+  background: url(../images/separator.png) no-repeat;
+  background-size: cover;
 }
 
 /* INTRO PAGE -----------------*/
@@ -212,12 +288,10 @@ div.about-container {
   -moz-box-shadow: 8px 0 6px -6px lightgrey, -8px 0 6px -6px lightgrey;
   box-shadow: 8px 0 6px -6px lightgrey, -8px 0 6px -6px lightgrey;
   height: 100%;
-  width: 64%;
-  max-width: 900px;
   margin: 0 auto;
   z-index: 4;
-  padding-left: 4%;
-  padding-right: 4%;
+  padding-left: 7%;
+  padding-right: 7%;
   //investigate: parent fills the height of child container when overflow hidden set
   overflow: hidden;
   padding-bottom: 50px;
@@ -233,7 +307,7 @@ div.about-container {
 
 div.skewed {
   transform: rotate(-4deg);
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 span.emp {
@@ -302,6 +376,10 @@ span.map-icon {
   display: inline-block;
   cursor: pointer;
 }
+
+
+
+
 
 /*------- Media mobile ------*/
 @media (max-width: 380px) {
@@ -453,7 +531,6 @@ a.contact-link {
 }
 
 /* fade out */
-
 @keyframes fadeOut {
   0% {
     opacity: 1;
