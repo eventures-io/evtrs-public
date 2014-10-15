@@ -73,7 +73,7 @@ eventApp.controller('aboutController', function ($scope) {
         });
 });
 
-eventApp.controller('contactController', function ($scope, $rootScope) {
+eventApp.controller('contactController', function ($scope, $rootScope, $http) {
     $scope.$parent.seo = {
         pageTitle: 'Contact',
         pageDescripton: 'Contact us'
@@ -94,6 +94,28 @@ eventApp.controller('contactController', function ($scope, $rootScope) {
         $rootScope.$broadcast('map-toggled', $scope.slant);
 
     }
+
+    $scope.formData = {};
+
+    $scope.sendContactRequest = function(){
+        console.log('processing post : ' + $scope.formData.name);
+        $http.post('api/contact', $scope.formData)
+            .success(function(data) {
+                console.log("data: " + data);
+
+                if (data.status !== 'success') {
+                    // if not successful, bind errors to error variables
+                    $scope.errorName = data.errors.name;
+                    $scope.errorEmail = data.errors.email;
+                } else {
+                    // if successful, bind success message to message
+                    $scope.message = data.message;
+                }
+            }).error(function(data){
+
+            });
+    };
+
 });
 
 

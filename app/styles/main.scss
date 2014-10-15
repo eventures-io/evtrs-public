@@ -360,12 +360,12 @@ div.contact-bg-retracted {
 div.contact-container {
   margin: 0 auto;
   width: 350px;
-  height: 350px;
+  //height: 350px;
   text-align: center;
   padding: 20px;
   border: 1px darkgray solid;
   border-radius: 4px;
-  overflow: hidden;
+  //overflow: hidden;
 }
 
 span.map-icon {
@@ -377,9 +377,18 @@ span.map-icon {
   cursor: pointer;
 }
 
-
-
-
+div.form-toggle {
+  position: relative;
+  height: 30px;
+  width: 150px;
+  float: right;
+  bottom: -20px;
+  background: $secondary-color;
+  border-radius: 0px 0px 4px 4px;
+  border: 1px darkgray solid;
+  padding-top: 5px;
+  cursor: pointer;
+}
 
 /*------- Media mobile ------*/
 @media (max-width: 380px) {
